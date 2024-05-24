@@ -1,12 +1,12 @@
 import React from "react";
 import Navbarfirst from "../components/Navbar";
 
-const Beridonasi = () => {
+const Tentangkami = () => {
     return (
         <div>
             <Navbarfirst />
-            <h1>Beri donasi</h1>
+            <h1>Tentang Kami</h1>
         </div>
     );
 };
-export default Beridonasi;
+export default Tentangkami;

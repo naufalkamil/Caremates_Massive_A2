@@ -12,8 +12,8 @@ function Navbarfirst({ activeLinkProp }) {
   useEffect(() => {
     const pathToKey = {
       '/': 'home',
-      '/features': 'features',
-      '/about': 'about',
+      '/beridonasi': 'features',
+      '/tentangkami': 'about',
       '/pusatbantuan': 'help'
     };
     const currentPath = location.pathname;
@@ -36,8 +36,8 @@ function Navbarfirst({ activeLinkProp }) {
           <Nav style={navStyle}>
             {[
               { path: '/', label: 'Beranda', key: 'home' },
-              { path: '/features', label: 'Beri Donasi', key: 'features' },
-              { path: '/about', label: 'Tentang Kami', key: 'about' },
+              { path: '/beridonasi', label: 'Beri Donasi', key: 'features' },
+              { path: '/tentangkami', label: 'Tentang Kami', key: 'about' },
               { path: '/pusatbantuan', label: 'Pusat Bantuan', key: 'help' }
             ].map((link, index) => (
               <Nav.Link

@@ -41,6 +41,9 @@ const Beranda = () => {
             75% { background-position: 75% 50%; }
             100% { background-position: 0% 50%; }
           }
+          body.no-scroll {
+            overflow: hidden;
+          }
 
           /* Tambahkan gaya CSS untuk slideshow dan ikon */
           .home {
