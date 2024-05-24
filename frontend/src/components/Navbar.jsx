@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
+import { Link, useLocation } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import carematesLogo from '../img/img-components/img-beranda/caremates.png';
 
 function Navbarfirst({ activeLinkProp }) {
+  const location = useLocation();
   const [activeLink, setActiveLink] = useState(activeLinkProp || 'home');
   const [hoverLink, setHoverLink] = useState(null);
 
   useEffect(() => {
-    setActiveLink(activeLinkProp);
-  }, [activeLinkProp]);
+    const pathToKey = {
+      '/': 'home',
+      '/features': 'features',
+      '/about': 'about',
+      '/pusatbantuan': 'help'
+    };
+    const currentPath = location.pathname;
+    setActiveLink(pathToKey[currentPath] || 'home');
+  }, [location]);
 
   const handleSetActive = (link) => {
     setActiveLink(link);
@@ -28,7 +35,7 @@ function Navbarfirst({ activeLinkProp }) {
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav style={navStyle}>
             {[
-              { path: '/beranda', label: 'Beranda', key: 'home' },
+              { path: '/', label: 'Beranda', key: 'home' },
               { path: '/features', label: 'Beri Donasi', key: 'features' },
               { path: '/about', label: 'Tentang Kami', key: 'about' },
               { path: '/pusatbantuan', label: 'Pusat Bantuan', key: 'help' }
@@ -38,11 +45,9 @@ function Navbarfirst({ activeLinkProp }) {
                 to={link.path}
                 key={link.key}
                 style={{
-                  ...(
-                    activeLink === link.key || hoverLink === link.key
-                      ? activeNavLinkStyle
-                      : navLinkStyle
-                  ),
+                  ...navLinkStyle,
+                  ...(activeLink === link.key && activeNavLinkStyle),
+                  ...(hoverLink === link.key && hoverNavLinkStyle),
                   marginRight: index < 3 ? '20px' : '0'
                 }}
                 onClick={() => handleSetActive(link.key)}
@@ -69,7 +74,7 @@ const navbarStyle = {
   margin: '2%',
   position: 'fixed',
   width: '93%',
-  zIndex: 2,
+  zIndex: 3,
   borderRadius: '20px',
   background: 'rgba(255, 255, 255, 0.42)',
   boxShadow: '0px 0px 24px -5px rgba(0, 0, 0, 0.25)',
@@ -93,11 +98,18 @@ const navLinkStyle = {
   transition: 'all 0.3s ease-in-out',
   fontSize: '18px',
   fontFamily: 'Open Sans, sans-serif',
+  textDecoration: 'none',
+  cursor: 'pointer'
 };
 
 const activeNavLinkStyle = {
-  ...navLinkStyle,
   backgroundColor: '#4D96B6',
+  color: '#fff',
+  fontWeight: 'bold',
+};
+
+const hoverNavLinkStyle = {
+  backgroundColor: '#6FB3D2',
   color: '#fff',
 };
 

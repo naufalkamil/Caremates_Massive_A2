@@ -87,7 +87,7 @@ const Pusatbantuan = () => {
           <h2 style={{fontWeight: '700', fontSize: '36px'}}>Pertanyaan Teratas</h2>
         </div>
         {/* Letakkan komponen Accordion di sini */}
-        <Accordion defaultActiveKey="0" style={{ overflowY: 'auto', maxHeight: '40vh', color:'#f0f0f0' }}>
+        <Accordion defaultActiveKey="null" style={{ overflowY: 'auto', maxHeight: '40vh', color:'#f0f0f0' }}>
           <Accordion.Item eventKey="0" style={{ marginBottom: '10px', backgroundColor: '#f0f0f0', borderRadius: '28px'}}>
             <Accordion.Header >Apa itu Caremates</Accordion.Header>
             <Accordion.Body>
