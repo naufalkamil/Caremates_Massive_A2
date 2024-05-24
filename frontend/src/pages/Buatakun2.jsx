@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-const Buatakun1 = () => {
+const Buatakun2 = () => {
   const [text, setText] = useState('');
 
   const handleChange = (e) => {
     setText(e.target.value);
   };
-
   useEffect(() => {
     // Add the no-scroll class to the body element
     document.body.classList.add('no-scroll');
@@ -16,7 +15,7 @@ const Buatakun1 = () => {
       document.body.classList.remove('no-scroll');
     };
   }, []);
-  
+
   return (
     <div style={backgroundStyle}>
       <style>
@@ -46,16 +45,16 @@ const Buatakun1 = () => {
             </div>
         </div>
       </section>
-      <section className="home" style={Buatakun1Style}>
+      <section className="home" style={Buatakun2Style}>
         <div className="container" style={{width: '100%',  padding:'0', margin:'0'}}>
             <div className="row" style={rowStyle}>
-                <div className="col" style={{display: 'flex', justifyContent: 'center', alignItems: 'center',padding:'1%',background: 'linear-gradient(90deg, rgba(15, 180, 170, 0.60) 0.02%, rgba(9, 135, 183, 0.60) 69.01%)', margin: '0', borderRadius: '20px 63px 0px 0px'}}>
+                <div className="col" style={{display: 'flex', justifyContent: 'center', alignItems: 'center',padding:'1%'}}>
                     <p style={pnoStyle}>1</p>
-                    <p style={{fontWeight: '400', fontSize:'24px', margin:'0'}}>Data Lembaga</p>
+                    <p style={{fontWeight: '400', fontSize:'24px',color: '#4D96B6',margin:'0', margin:'0'}}>Data Lembaga</p>
                 </div>
-                <div className="col" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding:'1%'}}>
-                  <p style={pnoStyle}>2</p>
-                    <p style={{fontWeight: '400', fontSize:'24px',color: '#4D96B6',margin:'0'}}>Data PJ Lembaga</p>
+                <div className="col" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding:'1%', background: 'linear-gradient(90deg, rgba(15, 180, 170, 0.60) 0.02%, rgba(9, 135, 183, 0.60) 69.01%)', margin: '0', borderRadius: '63px 63px 0px 0px'}}>
+                    <p style={pnoStyle}>2</p>
+                    <p style={{fontWeight: '400', fontSize:'24px',margin:'0'}}>Data PJ Lembaga</p>
                 </div>
                 <div className="col" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding:'1%'}}>
                     <p style={pnoStyle}>3</p>
@@ -63,10 +62,10 @@ const Buatakun1 = () => {
                 </div>
             </div>
             <div className="col">
-              <p style={{ textAlign:'center', fontSize:'18px',marginBottom:'0', marginTop:'1%', fontWeight: '400'}}>Tahap 1</p>
+              <p style={{ textAlign:'center', fontSize:'18px',marginBottom:'0', marginTop:'1%', fontWeight: '400'}}>Tahap 2</p>
             </div>
             <div className="col">
-              <p style={{ textAlign:'center', fontSize:'30px',marginBottom:'0', fontWeight: '400'}}>Data Lembaga</p>
+              <p style={{ textAlign:'center', fontSize:'30px',marginBottom:'0', fontWeight: '400'}}>Data Penanggung Jawab Lembaga</p>
             </div>
         </div>
       </section>
@@ -89,7 +88,7 @@ const backgroundStyle = {
   color: 'white',
 };
 
-const Buatakun1Style = {
+const Buatakun2Style = {
     position: 'fixed',
   top: '50%',
   left: '50%',
@@ -125,4 +124,4 @@ const pnoStyle = {
   marginRight: '2%'
 }
 
-export default Buatakun1;
+export default Buatakun2;
