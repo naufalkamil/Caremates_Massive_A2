@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const Buatakun3 = () => {
+const Buatakun3 = ({ onNavigate }) => {
   const [text, setText] = useState('');
 
   const handleChange = (e) => {
@@ -49,26 +49,63 @@ const Buatakun3 = () => {
       <section className="home" style={Buatakun3Style}>
         <div className="container" style={{width: '100%',  padding:'0', margin:'0'}}>
             <div className="row" style={rowStyle}>
-                <div className="col" style={{display: 'flex', justifyContent: 'center', alignItems: 'center',padding:'1%',}}>
+                <div className="col"  onClick={() => onNavigate('Buatakun1')} style={{display: 'flex', justifyContent: 'center', alignItems: 'center',padding:'1%',}}>
                     <p style={pnoStyle}>1</p>
                     <p style={{fontWeight: '400', fontSize:'24px',color: '#4D96B6', margin:'0'}}>Data Lembaga</p>
                 </div>
-                <div className="col" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding:'1%'}}>
+                <div className="col"  onClick={() => onNavigate('Buatakun2')} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding:'1%'}}>
                   <p style={pnoStyle}>2</p>
-                    <p style={{fontWeight: '400', fontSize:'24px',color: '#4D96B6',margin:'0'}}>Data PJ Lembaga</p>
+                    <p style={{fontWeight: '400', fontSize:'24px',color: '#4D96B6',margin:'0'}}>Verifikasi Data</p>
                 </div>
                 <div className="col" style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding:'1%', background: 'linear-gradient(90deg, rgba(15, 180, 170, 0.60) 0.02%, rgba(9, 135, 183, 0.60) 69.01%)', margin: '0', borderRadius: '63px 20px 0px 0px'}}>
                     <p style={pnoStyle}>3</p>
-                    <p style={{fontWeight: '400', fontSize:'24px',margin:'0'}}>Verifikasi Data</p>
+                    <p style={{fontWeight: '400', fontSize:'24px',margin:'0'}}>Data PJ Lembaga</p>
                 </div>
             </div>
             <div className="col">
               <p style={{ textAlign:'center', fontSize:'18px',marginBottom:'0', marginTop:'1%', fontWeight: '400'}}>Tahap 3</p>
             </div>
             <div className="col">
-              <p style={{ textAlign:'center', fontSize:'30px',marginBottom:'0', fontWeight: '400'}}>Verifikasi Data</p>
+              <p style={{ textAlign:'center', fontSize:'30px',marginBottom:'0', fontWeight: '400'}}>Data Penanggung Jawab Lembaga</p>
+            </div>
+            <div className="row" style={{ display: 'flex', justifyContent: 'space-between', margin:'1%'}}>
+              <div className="col-5">
+                <p style={{margin:'0 0 0 1%', fontSize: '18px'}}>Nama Penanggung Jawab</p>
+                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width:'100%' }} type="text" name="nama" id="" placeholder= "Masukkan Nama PJ" />
+              </div>
+              <div className="col-5">
+                <p style={{margin:'0 0 0 1%', fontSize:'18px'}}>Jabatan Penanggung Jawab</p>
+                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width: '100%'}} type="text" name="nama" id="" placeholder= "Jabatan PJ" />
+              </div>
+            </div>
+            <div className="row" style={{ display: 'flex', justifyContent: 'space-between', margin:'1%'}}>
+              <div className="col-5">
+                <p style={{margin:'0 0 0 1%', fontSize: '18px'}}>Nomor Telepon PJ</p>
+                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width:'100%' }} type="text" name="nama" id="" placeholder= "Nomor Telepon PJ" />
+              </div>
+              <div className="col-5">
+                <p style={{margin:'0 0 0 1%', fontSize:'18px'}}>Alamat Email PJ</p>
+                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width: '100%'}} type="text" name="nama" id="" placeholder= "Masukkan Alamat Email PJ" />
+              </div>
+            </div>
+            <div className="row" style={{ display: 'flex', justifyContent: 'space-between', margin:'1%'}}>
+              <div className="col-5">
+                <p style={{margin:'0 0 0 1%', fontSize: '18px'}}>Nama Kontak Darurat</p>
+                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width:'100%' }} type="text" name="nama" id="" placeholder= "Masukkan Nama Kontak Darurat" />
+              </div>
+              <div className="col-5">
+                <p style={{margin:'0 0 0 1%', fontSize:'18px'}}>Nomot Telepon Kontak Darurat</p>
+                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width: '100%'}} type="text" name="nama" id="" placeholder= "Masukkan No.Telp Kontak Darurat" />
+              </div>
             </div>
         </div>
+      </section>
+      <section style={buttonContainerStyle}>
+      <div className="row" style={{width: '100%',justifyContent:'end'}}>
+          <div className="col-2" style={{display:'flex', justifyContent:'center'}}>
+          <button style={button1Style}>Kirim</button>
+          </div>
+      </div>
       </section>
     </div>
   );
@@ -95,7 +132,7 @@ const Buatakun3Style = {
   left: '50%',
   transform: 'translate(-50%, -50%)',
   width: '77%',
-  height: '75%',
+  height: '77%',
   margin: 0,
   padding: 0,
   borderRadius: '20px',
@@ -123,6 +160,25 @@ const pnoStyle = {
   justifyContent:'center', 
   textAlign:'center',
   marginRight: '2%'
-}
+};
+
+const buttonContainerStyle = {
+  marginTop: 'auto', // Pushes the button container to the bottom
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'space-around',
+  padding: '10px 0',
+  marginBottom:'1%'
+};
+
+const button1Style = {
+  padding: '10px 20px',
+  border: 'none',
+  borderRadius: '40px',
+  backgroundColor: '#fff',
+  color: '#4D96B6',
+  cursor: 'pointer',
+  fontSize: '20px'
+};
 
 export default Buatakun3;
