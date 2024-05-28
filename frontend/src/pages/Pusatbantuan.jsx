@@ -17,15 +17,22 @@ const Pusatbantuan = () => {
     max-height: 40vh;
     border-radius: 25px;
 
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    & {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
     .accordion-item {
       margin-bottom: 10px;
       background: rgba(255, 255, 255, 0.30);
       border-radius: 28px;
       border: 1px solid #828282;
-      
-      &:all-of-type {
-        background-color: transparent;
-      }
     }
 
     .accordion-header {
