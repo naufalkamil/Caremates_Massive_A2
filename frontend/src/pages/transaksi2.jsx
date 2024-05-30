@@ -80,15 +80,14 @@ const transaksi2 = () => {
   );
 };
 
-// Objek gaya untuk latar belakang
 const backgroundStyle = {
-  height: '100vh', // Memastikan latar belakang menutupi seluruh tinggi viewport
+  height: '100vh',
   background: 'linear-gradient(45deg, #00cbb7, #0098d9, #00baa7, #0081b8)',
   animation: 'colorChange 12s ease-in-out infinite',
-  backgroundSize: '200% 200%',
+  backgroundSize: '500% 500%',
   backgroundPosition: '0% 50%',
   fontFamily: '"Open Sans", sans-serif',
-  margin: 0, // Menghapus margin default dari body
+  margin: 0,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

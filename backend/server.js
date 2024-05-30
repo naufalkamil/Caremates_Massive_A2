@@ -1,37 +1,20 @@
-const express = require("express");
+// src/server.js
+import express from 'express';
+import db from './config/database.js';
+import userRoutes from './routes/userRoutes.js';
+
 const app = express();
-const database = require("./database");
 
-const PORT = 8000;
-
-// middleware
-// Ambil data dari client yang langsung dikirim berbentuk json
 app.use(express.json());
 
-// menangani data dari client atau browser
-app.use(express.urlencoded({extended: true}));
+db.authenticate()
+  .then(() => console.log('Database Connected...'))
+  .catch(err => console.log('Error: ' + err));
 
-// ROUTE http://localhost/
-// METHOD GET
-app.get('/', (req,res) => {
-    res.json({
-        message: "Berhasil melakukan routing"
-    });
-});
+db.sync()
+  .then(() => console.log('Tables synced...'))
+  .catch(err => console.log('Error: ' + err));
 
-// Routing 
-// ambil data semua user
-app.get("/api/user", (req, res) =>{
-    database.query(`SELECT * FROM user`, (err, results) => {
-        if(err) {
-            res.json(500).json({error: "Something wrong"});
-            throw err;
-        }
-        console.log(results);
-        res.json({results})
-    });
-});
+app.use('/api/users', userRoutes);
 
-app.listen(PORT, () =>
-    console.log(`Server is running on http://localhost:${PORT}`)
-);
+app.listen(5000, () => console.log('Server started on port 5000'));
