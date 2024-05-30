@@ -47,7 +47,7 @@ const Beranda = () => {
 
           /* Tambahkan gaya CSS untuk slideshow dan ikon */
           .home {
-            width: 90%;
+            width: 100%;
             margin-top: 0%;
             z-index: 2;
             align-item: center;
@@ -59,7 +59,7 @@ const Beranda = () => {
             height: 100vh;
           }
 
-          .slideshow-container {
+          .col-md-8 {
             position: relative;
             max-width: 80%;
             overflow: hidden;
@@ -67,7 +67,7 @@ const Beranda = () => {
           }
 
           .slide {
-            width: 80%;
+            width: 95%;
             height: auto;
             opacity: 0;
             transition: opacity 1s ease-in-out;
@@ -75,8 +75,9 @@ const Beranda = () => {
           }
 
           .slide img {
-            width: 100%;
+            width: 95%;
             justify-content: center;
+            margin: 0;
           }
 
           .slide.active {
@@ -88,13 +89,11 @@ const Beranda = () => {
             flex-direction: column;
             align-items: center;
             text-align: center;
-            justify-content: center;
           }
 
           .icon img {
             width: 100%;
             border-radius: 50%;
-            margin-top: 15px;
             margin-bottom: 10px; 
           }
 
@@ -121,8 +120,8 @@ const Beranda = () => {
 
       {/* Bagian home dengan slideshow dan ikon */}
       <section className="home">
-        <div className="container1 justify-content-center" style={{ display: 'flex', paddingTop: '12%'}}>
-          <div className="slideshow-container col-md-9">
+        <div className="container1" style={{ display: 'flex', paddingTop: '9%', width:'100%',}}>
+          <div className="col-md-8">
             <div className="slide active">
               <img src={slide1} alt="slide 1" />
             </div>
@@ -133,7 +132,7 @@ const Beranda = () => {
               <img src={slide3} alt="slide 3" />
             </div>
           </div>
-          <div className="icon col-md-4 justify-content-center ">
+          <div className="col-md-3 icon mt-5 pt-5">
             <img src={donate1} alt="icon" />
             <div className="button-daftar">Daftarkan Lembaga Anda</div>
           </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Navbarfirst from '../components/Navbar';
-import Button from 'react-bootstrap/Button';
-import Accordion from 'react-bootstrap/Accordion'; // tambahkan ini
+import galeri1 from '../img/img-galeri/galeri1.jpg';
+import galeri2 from '../img/img-galeri/galeri2.jpg';
 
 const Galeripanti = () => {
   const [text, setText] = useState('');
@@ -36,6 +36,22 @@ const Galeripanti = () => {
           .search-input:focus {
             font-size: 20px; /* Ukuran font lebih besar saat fokus */
           }
+
+          .scroll-container {
+            overflow-y: auto;
+            max-height: 100%;
+          }
+
+          /* Hide scrollbar for Chrome, Safari and Opera */
+          .scroll-container::-webkit-scrollbar {
+            display: none;
+          }
+
+          /* Hide scrollbar for IE, Edge and Firefox */
+          .scroll-container {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+          }
         `}
       </style>
 
@@ -43,16 +59,49 @@ const Galeripanti = () => {
       <Navbarfirst />
 
       <section className="home" style={GaleripantiStyle}>
-        <div className="row justify-content-center text-center">
-          <div className="col justify-content-center">
+        <div className="row">
+          <h2 style={{ fontWeight: '700', fontSize: '36px', margin: '0', padding: '3% 2% 1% 2%' }}>Galeri Kami</h2>
+        </div>
+        <div className="scroll-container">
+          <div className="row m-3">
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri2} alt="galeri2" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
           </div>
         </div>
-        <div className="row">
-          <h2 style={{fontWeight: '700', fontSize: '36px', margin:'0', padding:'1% 2% 1% 2%'}}>Galeri Kami</h2>
-        </div>
-      </section>
-      <section style={cardgaleriStyle}>
-          
       </section>
     </div>
   );
@@ -74,19 +123,23 @@ const backgroundStyle = {
 };
 
 const GaleripantiStyle = {
-    position: 'fixed',
-    top: '60%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: '88%',
-    height: '88%',
-    margin: 0,
-    borderRadius: '20px',
-    zIndex: 2,
-    marginBottom:'100%'
+  position: 'fixed',
+  top: '56%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: '88%',
+  height: '81%',
+  margin: 0,
+  borderRadius: '20px',
+  zIndex: 2,
+  overflow: 'hidden', // Ensure the content is clipped when scrolling
 };
 
-const cardgaleriStyle = {
-    width: '100%',
-}
+const imgStyle = {
+  borderRadius: '10px',
+  width: '248px',
+  height: '242px',
+  boxShadow: '1px 1px 15px 1px rgba(0, 0, 0, 0.25)',
+};
+
 export default Galeripanti;

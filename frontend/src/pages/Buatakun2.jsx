@@ -63,9 +63,6 @@ const Buatakun2 = ({ onNavigate }) => {
 
             </div>
             <div className="col">
-              <p style={{ textAlign:'center', fontSize:'18px',marginBottom:'0', marginTop:'1%', fontWeight: '400'}}>Tahap 2</p>
-            </div>
-            <div className="col">
               <p style={{ textAlign:'center', fontSize:'30px',marginBottom:'0', fontWeight: '400'}}>Verifikasi Data</p>
             </div>
             <div className="row" style={{ display: 'flex', justifyContent: 'space-between', margin:'1%'}}>
@@ -170,12 +167,11 @@ const buttonContainerStyle = {
   width: '100%',
   display: 'flex',
   justifyContent: 'space-around',
-  padding: '10px 0',
-  marginBottom:'1%'
+  padding: '10px ',
 };
 
 const button1Style = {
-  padding: '10px 20px',
+  padding: '10px',
   border: 'none',
   borderRadius: '40px',
   backgroundColor: '#fff',

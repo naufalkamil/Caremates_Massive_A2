@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import styled from '@emotion/styled';
 import Navbarfirst from '../components/Navbar';
 import Button from 'react-bootstrap/Button';
-import Accordion from 'react-bootstrap/Accordion'; // tambahkan ini
+import Accordion from 'react-bootstrap/Accordion';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Pusatbantuan = () => {
   const [text, setText] = useState('');
@@ -9,6 +11,58 @@ const Pusatbantuan = () => {
   const handleChange = (e) => {
     setText(e.target.value);
   };
+
+  const StyledAccordion = styled(Accordion)`
+    overflow-y: auto;
+    max-height: 40vh;
+    border-radius: 25px;
+
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    & {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    .accordion-item {
+      margin-bottom: 10px;
+      background: rgba(255, 255, 255, 0.30);
+      border-radius: 28px;
+      border: 1px solid #828282;
+    }
+
+    .accordion-header {
+      border-radius: 28px;
+      background-color: transparent;
+      color: white; /* Change text color to white */
+    }
+
+    .accordion-button {
+      border-radius: 28px;
+      background-color: transparent;
+      color: white; /* Change text color to white */
+      transition: background-color 0.3s, color 0.3s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 28px;
+      }
+
+      &:not(.collapsed) {
+        background-color: rgba(0, 0, 0, 0.1);
+        color: white; /* Change text color to white */
+        border-radius: 28px;
+      }
+    }
+
+    .accordion-body {
+      color: white; /* Change text color to white */
+    }
+  `;
 
   return (
     <div style={backgroundStyle}>
@@ -31,7 +85,7 @@ const Pusatbantuan = () => {
             border: none;
             background: transparent;
             padding-right: 0;
-            font-size: 20px
+            font-size: 20px;
           }
           .search-input:focus {
             font-size: 20px; /* Ukuran font lebih besar saat fokus */
@@ -39,7 +93,6 @@ const Pusatbantuan = () => {
         `}
       </style>
 
-      {/* Komponen Navbar */}
       <Navbarfirst />
 
       <section className="home pt-5 mb-0" style={pusatbantuanStyle}>
@@ -68,7 +121,7 @@ const Pusatbantuan = () => {
                 style={{
                   width: '90%',
                   height: '90%',
-                  margin: '30px',
+                  margin: '30px 30px 30px 0px',
                   fontWeight: '30px'
                 }}
                 value={text}
@@ -77,50 +130,53 @@ const Pusatbantuan = () => {
               />
             </div>
           </div>
-          <div className="col-2 d-flex align-items-center"> {/* ubah align content menjadi align items */}
-            <Button variant="secondary" style={{ width: '100%', height: '100%', }}>
-              Ajukan <br /> Pertanyaan
-            </Button>{' '}
+          <div className="col-2 d-flex align-items-center">
+            <Button variant="secondary" className="w-100 h-100" style={{fontSize: '16px', padding:'0'}}>
+              Ajukan
+            </Button>
           </div>
         </div>
         <div className="row pt-4">
           <h2 style={{fontWeight: '700', fontSize: '36px'}}>Pertanyaan Teratas</h2>
         </div>
-        {/* Letakkan komponen Accordion di sini */}
-        <Accordion defaultActiveKey="null" style={{ overflowY: 'auto', maxHeight: '40vh', color:'#f0f0f0' }}>
-          <Accordion.Item eventKey="0" style={{ marginBottom: '10px', backgroundColor: '#f0f0f0', borderRadius: '28px'}}>
-            <Accordion.Header >Apa itu Caremates</Accordion.Header>
+        <StyledAccordion defaultActiveKey="null">
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>Apa itu Caremates</Accordion.Header>
             <Accordion.Body>
-            Caremates adalah platform yang berdedikasi untuk memfasilitasi kesejahteraan sosial dengan menghubungkan para dermawan dengan lembaga seperti panti asuhan yang membutuhkan dukungan.
+              Caremates adalah platform yang berdedikasi untuk memfasilitasi kesejahteraan sosial dengan menghubungkan para dermawan dengan lembaga seperti panti asuhan yang membutuhkan dukungan.
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="1" style={{ marginBottom: '10px', backgroundColor: '#f0f0f0', borderRadius: '28px' }}>
-            <Accordion.Header >Bagaimana alur dana hingga sampai ke lembaga?</Accordion.Header>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>Bagaimana alur dana hingga sampai ke lembaga?</Accordion.Header>
             <Accordion.Body>
-            Dana yang masuk akan langsung ditujukan kepada lembaga terkait, tampa adanya penamupungan dari pihak Caremates. Hal ini untuk menghindari adanya kecurangan atau hal semacamnya, dan untuk mempercepat proses pencairan dana.
+              Dana yang masuk akan langsung ditujukan kepada lembaga terkait, tanpa adanya penampungan dari pihak Caremates. Hal ini untuk menghindari adanya kecurangan atau hal semacamnya, dan untuk mempercepat proses pencairan dana.
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="2" style={{ marginBottom: '10px', backgroundColor: '#f0f0f0', borderRadius: '28px' }}>
+          <Accordion.Item eventKey="2">
             <Accordion.Header>Bagaimana cara mendaftarkan lembaga saya?</Accordion.Header>
             <Accordion.Body>
-            Untuk mendaftarkan lembaga, klik Daftarkan Lembaga Anda  yang berada pada halaman Beranda kami.  Selanjutnya anda akan diarahkan untuk mengisi formulir yang sudah disediakan. Ikuti setiap proses dan anda akan berhasil membuat akun lembaga.</Accordion.Body>
+              Untuk mendaftarkan lembaga, klik Daftarkan Lembaga Anda yang berada pada halaman Beranda kami. Selanjutnya anda akan diarahkan untuk mengisi formulir yang sudah disediakan. Ikuti setiap proses dan anda akan berhasil membuat akun lembaga.
+            </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="3" style={{ marginBottom: '10px', backgroundColor: '#f0f0f0', borderRadius: '28px' }}>
+          <Accordion.Item eventKey="3">
             <Accordion.Header>Apa saja metode pembayaran untuk berdonasi?</Accordion.Header>
             <Accordion.Body>
-            Anda bisa melakukan donasi dengan M-Banking BCA, Mandiri, BRI, Serta E-Wallet seperti Shopee Pay, Dana, Dan Go Pay</Accordion.Body>
+              Anda bisa melakukan donasi dengan M-Banking BCA, Mandiri, BRI, serta E-Wallet seperti Shopee Pay, Dana, dan Go Pay.
+            </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="4" style={{ marginBottom: '10px', backgroundColor: '#f0f0f0', borderRadius: '28px' }}>
+          <Accordion.Item eventKey="4">
             <Accordion.Header>Apakah wajib membuat akun untuk bisa berdonasi?</Accordion.Header>
             <Accordion.Body>
-            Jika anda donatur, anda bisa langsung berdonasi tanpa membuat akun. Hanya pemilik lembaga yang wajib membuat akun.</Accordion.Body>
+              Jika anda donatur, anda bisa langsung berdonasi tanpa membuat akun. Hanya pemilik lembaga yang wajib membuat akun.
+            </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item eventKey="5" style={{ marginBottom: '10px', backgroundColor: '#f0f0f0', borderRadius: '28px' }}>
+          <Accordion.Item eventKey="5">
             <Accordion.Header>Apa ada batas minimal untuk berdonasi?</Accordion.Header>
             <Accordion.Body>
-            Anda bisa berdonasi mulai dari Rp.10.000.</Accordion.Body>
+              Anda bisa berdonasi mulai dari Rp.10.000.
+            </Accordion.Body>
           </Accordion.Item>
-        </Accordion>
+        </StyledAccordion>
       </section>
     </div>
   );
@@ -128,13 +184,13 @@ const Pusatbantuan = () => {
 
 // Objek gaya untuk latar belakang
 const backgroundStyle = {
-  height: '100vh', // Memastikan latar belakang menutupi seluruh tinggi viewport
+  height: '100vh',
   background: 'linear-gradient(45deg, #00cbb7, #0098d9, #00baa7, #0081b8)',
   animation: 'colorChange 12s ease-in-out infinite',
   backgroundSize: '200% 200%',
   backgroundPosition: '0',
   fontFamily: '"Open Sans", sans-serif',
-  margin: 0, // Menghapus margin default dari body
+  margin: 0,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
