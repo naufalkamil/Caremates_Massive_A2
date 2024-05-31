@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(80, 255, 214, 0.5);
+  background-color: rgba(12, 66, 54, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,10 +13,10 @@
 .konfirmasi-popup-inner {
   background: rgba(203, 200, 200, 0.468);
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 15px;
   width: 600px;
   height: 300px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
   position: relative;
   display: flex;
@@ -85,4 +85,37 @@
 
 .konfirmasi-popup-inner p.bottom-text {
   margin-top: 10px; /* Atur margin atas sesuai kebutuhan */
+}
+
+.konfirmasi-popup-inner .close-btn:hover {
+  background-color: #21726a;
+  color: #ffffff;
+}
+
+button:hover {
+  background-color: #21726a;
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .konfirmasi-popup-inner {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .checkmark {
+    width: 60px;
+    height: 60px;
+  }
+
+  .checkmark::after {
+    width: 14px;
+    height: 24px;
+  }
+
+  .konfirmasi-popup-inner .close-btn {
+    padding: 8px 16px;
+    bottom: 15px; /* Menyesuaikan jarak dari bawah pada layar kecil */
+    right: 15px; /* Menyesuaikan jarak dari kanan pada layar kecil */
+  }
 }
