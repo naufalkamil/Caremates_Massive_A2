@@ -26,9 +26,10 @@ function App() {
         <Route path="/buatakun3" element={<Buatakun3 />} />
         <Route path="/galeripanti" element={<Galeripanti />} />
         <Route path="/transaksi2" element={<Transaksi2 />} />
-        <Route path="/login" element={<FungsiPopup />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/pengajuanpenggalangan" element={<Pengajuanpenggalangan />} />
-      </Routes>
+        <Route path="/detailyayasan" element={<Detailyayasan />} />
+        </Routes>
     </BrowserRouter>
   );
 }
