@@ -11,6 +11,7 @@ import Galeripanti from "./pages/Galeripanti";
 import Transaksi2 from "./pages/transaksi2";
 import FungsiPopup from "./pages/login";
 import Pengajuanpenggalangan from "./pages/Pengajuanpenggalangan";
+import Detailyayasan from "./pages/Detailyayasan";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/transaksi2" element={<Transaksi2 />} />
         <Route path="/login" element={<FungsiPopup />} />
         <Route path="/pengajuanpenggalangan" element={<Pengajuanpenggalangan />} />
+        <Route path="/detailyayasan" element={<Detailyayasan />} />
       </Routes>
     </BrowserRouter>
   );
