@@ -12,8 +12,9 @@
 
 .popup-inner {
   background: rgba(203, 200, 200, 0.468);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 15px;
   width: 600px;
   height: 300px;
   flex-direction: column;
@@ -39,4 +40,17 @@
 button:hover {
   background-color: #21726a;
   color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .popup-inner {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .custom-btn {
+    padding: 8px 16px;
+    bottom: 15px; /* Menyesuaikan jarak dari bawah pada layar kecil */
+    right: 15px; /* Menyesuaikan jarak dari kanan pada layar kecil */
+  }
 }

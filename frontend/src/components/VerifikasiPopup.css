@@ -4,7 +4,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(80, 255, 214, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,9 +12,9 @@
 .verifikasi-popup-inner {
   background-color: #fff;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 15px;
   background: #ffcc15;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
   flex-direction: column;
   display: flex;
@@ -40,7 +39,7 @@
 }
 
 .verifikasi-popup-inner .buttons button {
-  margin: 0 10px;
+  margin: 0 50px;
   padding: 10px 20px;
   border: none;
   border-radius: 10px;
@@ -55,4 +54,26 @@
 .verifikasi-popup-inner .buttons button:last-child {
   background-color: #ffffff;
   color: #ffcc15;
+}
+
+@media (max-width: 600px) {
+  .verifikasi-popup-inner {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .verifikasi-popup-inner h2 {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+  }
+
+  .verifikasi-popup-inner .buttons {
+    gap: 50px; /* Menyesuaikan gap untuk layar kecil */
+  }
+
+  .verifikasi-popup-inner .buttons button {
+    margin: 0 5px;
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
 }

@@ -1,88 +1,67 @@
-import React, { useState } from "react";
-import Popup from "../components/Popup";
-import VerifikasiPopup from "../components/KonfirmasiPopup";
-import KonfirmasiPopup from "../components/VerifikasiPop";
+import React from "react";
 import "./login.css";
 
-const FungsiPopup = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isVerifikasiOpen, setIsVerifikasiOpen] = useState(false);
-  const [isKonfirmasiPopupOpen, setIsKonfirmasiPopupOpen] = useState(false);
-  const [showVerifikasiButton, setShowVerifikasiButton] = useState(true);
-  const [showPopupButton, setShowPopupButton] = useState(true);
-  const [showKonfirmasiPopupButton, setShowKonfirmasiPopupButton] =
-    useState(true);
-
-  const togglePopup = () => {
-    setIsOpen(!isOpen);
-    setShowPopupButton(false);
-  };
-
-  const toggleKonfirmasiPopup = () => {
-    setIsKonfirmasiPopupOpen(true);
-    setShowKonfirmasiPopupButton(false); 
-  };
-
-  const handleConfirm = () => {
-    console.log("Aksi dikonfirmasi");
-    setIsVerifikasiOpen(false);
-    setShowVerifikasiButton(false);
-  };
-
-  const handleCancel = () => {
-    console.log("Aksi dibatalkan");
-    setIsVerifikasiOpen(false);
-  };
-
-  const handleAction = () => {
-    setIsVerifikasiOpen(true);
-    setShowVerifikasiButton(false);  
-  };
-
+const Login = () => {
   return (
-    <div>
-      {showVerifikasiButton && (
-        <button onClick={handleAction}>Verifikasi</button>
-      )}
-      {showKonfirmasiPopupButton && (
-        <button onClick={toggleKonfirmasiPopup}>Buka Konfirmasi Popup</button>
-      )}
-      {showPopupButton && <button onClick={togglePopup}>Buka Popup</button>}
-      {isOpen && (
-        <Popup
-          content={
-            <>
-              <h2>
-                Pengajuan penggalangan dana akan segera kami verifikasi dalam
-                kurun waktu 1x24 jam.
-              </h2>
-            </>
+    <div style={backgroundStyle}>
+      <style>
+        {`
+          @keyframes colorChange {
+            0% { background-position: 0% 50%; }
+            25% { background-position: 25% 50%; }
+            50% { background-position: 100% 50%; }
+            75% { background-position: 75% 50%; }
+            100% { background-position: 0% 50%; }
           }
-          handleClose={() => {
-            setIsOpen(false);
-            setShowPopupButton(true); 
-          }}
-        />
-      )}
-      {isVerifikasiOpen && (
-        <VerifikasiPopup
-          message="Apakah anda yakin akan menghentikan penggalangan?"
-          handleConfirm={handleConfirm}
-          handleCancel={handleCancel}
-        />
-      )}
-      {isKonfirmasiPopupOpen && (
-        <KonfirmasiPopup
-          topText="Akun Anda Akan Segera Kami Verifikasi dalam 1x24 jam, Terimakasih"
-          bottomText="Periksa secara berkala e-mail anda untuk mendapatkan tautan login setelah akun terverifikasi"
-          handleClose={() => {
-            setIsKonfirmasiPopupOpen(false);
-            setShowKonfirmasiPopupButton(true); 
-          }}
-        />
-      )}
+        `}
+      </style>
+      <div className="login-container">
+        <div className="login-logo">
+          <img src="/src/assets/caremates01.png" alt="Logo" />
+        </div>
+        <div className="login-form">
+          <h2>Selamat Datang!</h2>
+          <form>
+            <div className="form-group">
+              <label htmlFor="email">Alamat Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Masukan Email Lembaga"
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Masukan Kata Sandi</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Masukan Kata Sandi"
+                required
+              />
+            </div>
+            <button type="submit">Masuk</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
 
-export default FungsiPopup;
+const backgroundStyle = {
+  height: "100vh", // Memastikan latar belakang menutupi seluruh tinggi viewport
+  background: "linear-gradient(45deg, #00cbb7, #0098d9, #00baa7, #0081b8)",
+  animation: "colorChange 12s ease-in-out infinite",
+  backgroundSize: "200% 200%",
+  backgroundPosition: "0% 50%",
+  fontFamily: '"Open Sans", sans-serif',
+  margin: 0, // Menghapus margin default dari body
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  color: "white",
+};
+
+export default Login;
