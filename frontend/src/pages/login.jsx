@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import Popup from "./Popup";
-import VerifikasiPopup from "./VerifikasiPopup";
-import KonfirmasiPopup from "./KonfirmasiPopup";
+import Popup from "../components/Popup";
+import VerifikasiPopup from "../components/KonfirmasiPopup";
+import KonfirmasiPopup from "../components/VerifikasiPop";
+import "./login.css";
 
 const FungsiPopup = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,18 +15,18 @@ const FungsiPopup = () => {
 
   const togglePopup = () => {
     setIsOpen(!isOpen);
-    setShowPopupButton(false); // Sembunyikan tombol "Buka Popup" setelah diklik
+    setShowPopupButton(false);
   };
 
   const toggleKonfirmasiPopup = () => {
     setIsKonfirmasiPopupOpen(true);
-    setShowKonfirmasiPopupButton(false); // Sembunyikan tombol "Buka Konfirmasi Popup" setelah diklik
+    setShowKonfirmasiPopupButton(false); 
   };
 
   const handleConfirm = () => {
     console.log("Aksi dikonfirmasi");
     setIsVerifikasiOpen(false);
-    setShowVerifikasiButton(false); // Sembunyikan tombol "Konfirmasi" setelah dikonfirmasi
+    setShowVerifikasiButton(false);
   };
 
   const handleCancel = () => {
@@ -35,7 +36,7 @@ const FungsiPopup = () => {
 
   const handleAction = () => {
     setIsVerifikasiOpen(true);
-    setShowVerifikasiButton(false); // Sembunyikan tombol "Konfirmasi" setelah tombol "Konfirmasi" diklik
+    setShowVerifikasiButton(false);  
   };
 
   return (
@@ -59,7 +60,7 @@ const FungsiPopup = () => {
           }
           handleClose={() => {
             setIsOpen(false);
-            setShowPopupButton(true); // Tampilkan kembali tombol "Buka Popup" setelah menutup popup
+            setShowPopupButton(true); 
           }}
         />
       )}
@@ -76,7 +77,7 @@ const FungsiPopup = () => {
           bottomText="Periksa secara berkala e-mail anda untuk mendapatkan tautan login setelah akun terverifikasi"
           handleClose={() => {
             setIsKonfirmasiPopupOpen(false);
-            setShowKonfirmasiPopupButton(true); // Tampilkan kembali tombol "Buka Konfirmasi Popup" setelah menutup popup
+            setShowKonfirmasiPopupButton(true); 
           }}
         />
       )}
