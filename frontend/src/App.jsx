@@ -8,8 +8,6 @@ import Buatakun1 from "./pages/Buatakun1";
 import Buatakun2 from "./pages/Buatakun2";
 import Buatakun3 from "./pages/Buatakun3";
 import Galeripanti from "./pages/Galeripanti";
-import Transaksi2 from "./pages/transaksi2";
-import FungsiPopup from "./pages/login";
 
 function App() {
 
@@ -24,8 +22,6 @@ function App() {
         <Route path="/buatakun2" element={<Buatakun2 />} />
         <Route path="/buatakun3" element={<Buatakun3 />} />
         <Route path="/galeripanti" element={<Galeripanti />} />
-        <Route path="/transaksi2" element={<Transaksi2 />} />
-        <Route path="/login" element={<FungsiPopup />} />
       </Routes>
     </BrowserRouter>
   );
