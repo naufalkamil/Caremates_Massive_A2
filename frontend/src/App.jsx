@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css';
+import "./App.css";
 import Beranda from "./pages/beranda";
-import Beridonasi from "./pages/Beridonasi";
+import Beridonasi from "./pages/BeriDonasi";
 import Pusatbantuan from "./pages/Pusatbantuan";
 import Tentangkami from "./pages/Tentangkami";
 import Buatakun1 from "./pages/Buatakun1";
@@ -9,12 +9,11 @@ import Buatakun2 from "./pages/Buatakun2";
 import Buatakun3 from "./pages/Buatakun3";
 import Galeripanti from "./pages/Galeripanti";
 import Transaksi2 from "./pages/transaksi2";
-import FungsiPopup from "./pages/login";
+import Login from "./pages/login";
 import Pengajuanpenggalangan from "./pages/Pengajuanpenggalangan";
 import Detailyayasan from "./pages/Detailyayasan";
 
 function App() {
-
   return (
     <BrowserRouter>
       <Routes>
@@ -29,10 +28,9 @@ function App() {
         <Route path="/transaksi2" element={<Transaksi2 />} />
         <Route path="/login" element={<FungsiPopup />} />
         <Route path="/pengajuanpenggalangan" element={<Pengajuanpenggalangan />} />
-        <Route path="/detailyayasan" element={<Detailyayasan />} />
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default App;
