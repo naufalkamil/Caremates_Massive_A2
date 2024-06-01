@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Beranda from "./pages/beranda";
-import Beridonasi from "./pages/BeriDonasi";
+import BeriDonasi from "./pages/BeriDonasi";
 import Pusatbantuan from "./pages/Pusatbantuan";
 import Tentangkami from "./pages/Tentangkami";
 import Buatakun1 from "./pages/Buatakun1";
@@ -18,7 +18,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Beranda />} />
-        <Route path="/beridonasi" element={<Beridonasi />} />
+        <Route path="/beridonasi" element={<BeriDonasi />} />
         <Route path="/tentangkami" element={<Tentangkami />} />
         <Route path="/pusatbantuan" element={<Pusatbantuan />} />
         <Route path="/buatakun1" element={<Buatakun1 />} />
@@ -27,9 +27,12 @@ function App() {
         <Route path="/galeripanti" element={<Galeripanti />} />
         <Route path="/transaksi2" element={<Transaksi2 />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/pengajuanpenggalangan" element={<Pengajuanpenggalangan />} />
+        <Route
+          path="/pengajuanpenggalangan"
+          element={<Pengajuanpenggalangan />}
+        />
         <Route path="/detailyayasan" element={<Detailyayasan />} />
-        </Routes>
+      </Routes>
     </BrowserRouter>
   );
 }
