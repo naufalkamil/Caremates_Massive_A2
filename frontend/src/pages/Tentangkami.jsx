@@ -4,11 +4,10 @@ import { BsEnvelope, BsInstagram, BsWhatsapp  } from "react-icons/bs";
 import logo from '../img/img-tentangkami/logo.png'
 
 const tentangkami = () => {
-  
+
   React.useEffect(() => {
 
   }, []);
-
   const iconStyle = {
     color: '#4D96B6',
     fontSize: '50px',
@@ -17,9 +16,10 @@ const tentangkami = () => {
     borderRadius: '40%',
     display: 'inline-block',
   };
+
   return (
     <div style={backgroundStyle}>
-      <style>
+ <style>
         {`
           @keyframes colorChange {
             0% { background-position: 0% 50%; }
@@ -32,8 +32,52 @@ const tentangkami = () => {
             overflow: hidden;
           }
 
-        }
+          /* Tambahkan gaya CSS untuk slideshow dan ikon */
+          .home {
+            width: 90%;
+            margin-top: 0%;
+            z-index: 2;
+            align-item: center;
+            justify-content: center;
+            text-align: center;
+          }
 
+          .container1 {
+            height: 100vh;
+          }
+
+          .logo-container {
+            position: relative;
+            max-width: 80%;
+            overflow: hidden;
+            border-radius: 8px;
+          }
+
+          .logo {
+            width: 80%;
+            height: auto;
+            padding-top : 4%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            max-width: 100%;
+            opacity: 1;
+
+          }
+
+          .logo img {
+            width: 70%;
+            justify-content: center;
+            padding-left : 30%;
+            padding-top : 25%;
+          }
+          .icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+          }
         `}
       </style>
 
@@ -41,28 +85,27 @@ const tentangkami = () => {
       <Navbarfirst />
 
       {/* Bagian logo dan tentang kami */}
-      <section className="about">
-        <div style={{ display: 'flex', paddingTop: '15%'}}>
-            <div className='row'>
-                <div className=" logo col-md-4">
-                    <img src={logo} alt="logo" style={{marginTop : '30px', marginRight : '200px',
-                        marginLeft : '300px'}}/>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', paddingLeft:'15%' }}>
+      <section className="home">
+        <div className="container1 justify-content-center" style={{ display: 'flex', paddingTop: '7%'}}>
+          <div className="logo-container col-md-6">
+            <div className="logo">
+              <img src={logo} alt="logo" />
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', paddingLeft:'3%', paddingTop: '70%' }}>
                     <BsEnvelope style={iconStyle} />
                     <BsInstagram style={iconStyle} />
                     <BsWhatsapp style={iconStyle} />
                 </div>
-            </div>
-            <div style={{display:'flex'}}>
-                <p style={{color: 'white', fontFamily: 'Open Sans',
+          </div>
+          
+          <div className="icon col-md-6 justify-content-center " style={{justifyContent: 'center', paddingTop: '0%', paddingRight: '3%',color: 'white', fontFamily: 'Open Sans',
                     textAlign:'justify',
-                    fontSize: '25px',
+                    fontSize: '22px',
                     fontStyle: 'normal',
                     fontWight: '400',
                     lineHeight: 'normal',
-                    marginBottom: '0',
-                    paddingRight: '20%'}}> Caremates adalah sebuah inisiatif yang lahir dari tekad untuk membangun jaringan 
+                    marginBottom: '0'}}>
+          <p style={{}}> Caremates adalah sebuah inisiatif yang lahir dari tekad untuk membangun jaringan 
                     kemanusiaan yang inklusif dan berkelanjutan. Kami hadir sebagai platform yang menghubungkan 
                     para dermawan dengan lebih dari 150 lembaga panti asuhan di seluruh Indonesia, dengan tujuan 
                     utama menciptakan kesejahteraan bagi saudara-saudara kita yang membutuhkan. Melalui kolaborasi 
@@ -71,9 +114,9 @@ const tentangkami = () => {
                     untuk memberikan bantuan, tetapi juga sebuah wadah untuk menginspirasi dan mendorong perubahan 
                     positif dalam masyarakat. Dengan semangat kebersamaan dan komitmen yang teguh, kami berupaya 
                     menjadi agen perubahan yang membawa manfaat bagi seluruh komunitas.</p>
-            </div>
+
+          </div>
         </div>
-        
       </section>
 
       
