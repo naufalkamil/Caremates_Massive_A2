@@ -100,6 +100,15 @@ const Galeripanti = () => {
             <div className="col text-center pb-5">
               <img src={galeri1} alt="galeri1" style={imgStyle}/>
             </div>
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+            </div>
           </div>
         </div>
       </section>
@@ -137,8 +146,8 @@ const GaleripantiStyle = {
 
 const imgStyle = {
   borderRadius: '10px',
-  width: '248px',
-  height: '242px',
+  width: '200px',
+  height: '200px',
   boxShadow: '1px 1px 15px 1px rgba(0, 0, 0, 0.25)',
 };
 

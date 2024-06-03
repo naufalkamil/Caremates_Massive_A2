@@ -57,7 +57,7 @@ const PengajuanpenggalanganStyle = ({ onNavigate }) => {
             <p className='m-0' style={{fontSize:'40px', fontWeight:'700'}}>Ajukan Penggalangan Dana</p>
           </div>
           <div className="row pt-4">
-            <div className="col-4 justify-content-center align-content-center m-0">
+            <div className="col-5 justify-content-center align-content-center m-0">
               <p className="m-0" style={{fontSize:'20px'}}>Nominal Dana yang Dibutuhkan</p>
             </div>
             <div className="col-4">
@@ -68,7 +68,7 @@ const PengajuanpenggalanganStyle = ({ onNavigate }) => {
             <p className="m-0" style={{fontSize:'20px'}}>Rencana Alokasi Dana</p>
           </div>
           <div className="row pt-4">
-            <div className="col-8" style={{height: '165px'}}>
+            <div className="col-9" style={{height: '165px'}}>
               <textarea 
                 style={{
                   padding: '20px',
@@ -93,8 +93,8 @@ const PengajuanpenggalanganStyle = ({ onNavigate }) => {
             </div>
           </div>
         </div>
-        <div className="row pt-4 justify-content-end" style={{marginTop: 'auto'}}>
-          <div className="col-2" style={{display:'flex', justifyContent:'end'}}>
+        <div className="row pt-3 mb-2 justify-content-end" style={{marginTop: 'auto'}}>
+          <div className="col-2 " style={{display:'flex', justifyContent:'end'}}>
             <button style={button1Style}>Ajukan</button>
           </div>
         </div>
@@ -141,7 +141,7 @@ const button1Style = {
   backgroundColor: '#4D96B6',
   color: 'white',
   cursor: 'pointer',
-  fontSize: '18px'
+  fontSize: '18px',
 };
 
 export default PengajuanpenggalanganStyle;

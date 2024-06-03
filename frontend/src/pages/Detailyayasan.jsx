@@ -44,9 +44,9 @@ const Detailyayasan = () => {
       <Navbarfirst />
 
       <section className="home pt-4 mb-0" style={DetailyayasanStyle}>
-        <div className="row m-2" style={{ height: '400px' }}>
+        <div className="row m-2" style={{ height: '340px' }}>
           <div className="col-5 p-0 m-0">
-            <p style={{ fontSize: '30px', fontWeight: 700 }}>Yayasan Yatim Piatu Roudlotul Jannah</p>
+            <p style={{ fontSize: '30px', fontWeight: 700, marginBottom:"10px"}}>Yayasan Yatim Piatu Roudlotul Jannah</p>
             <div className="row">
               <div className="col-1">
                 <svg xmlns="http://www.w3.org/2000/svg" width="37" height="32" viewBox="0 0 37 32" fill="none">
@@ -54,15 +54,15 @@ const Detailyayasan = () => {
                 </svg>
               </div>
               <div className="col">
-                <p>HM4C+26X, Salam, Suko, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61224</p>
+                <p style={{marginBottom:"10px"}}>HM4C+26X, Salam, Suko, Kec. Sidoarjo, Kabupaten Sidoarjo, Jawa Timur 61224</p>
               </div>
             </div>
-            <div className="col image-container p-2" style={{ height: '220px', overflow: 'hidden' }}>
+            <div className="col image-container p-2" style={{ height: '190px', overflow: 'hidden' }}>
               <img className="img-fluid" style={{borderRadius:'30px'}} src={galeri1} alt="" />
             </div>
           </div>
           <div className="col p-0 rounded-4 no-scrollbar" style={textColStyle}>
-            <p style={{ fontWeight: '400', fontSize: '18px', margin: '3%' }}>
+            <p style={{ fontWeight: '400', fontSize: '16px', margin: '3%' }}>
               Yayasan Panti Asuhan Roudlotul Jannah adalah sebuah rumah amal yang menjadi tempat perlindungan dan pembinaan bagi anak-anak yang kurang beruntung di kabupaten Sidoarjo. Panti asuhan ini didirikan dengan tujuan memberikan perlindungan, pendidikan, dan kasih sayang kepada anak-anak yatim dan kurang mampu dari berbagai latar belakang. 
               <br />Di Yayasan Panti Asuhan Roudlotul Jannah, saat ini terdapat 30 anak asuh yang tinggal di sini. Mereka memiliki rentang usia antara 5 hingga 15 tahun. Anak-anak ini berasal dari berbagai latar belakang, seperti yatim piatu, anak jalanan, dan dari keluarga miskin di sekitar wilayah. Setiap anak mendapatkan perawatan yang holistik, termasuk akses pendidikan formal, pelayanan kesehatan, serta bimbingan spiritual.
               <br />Sumber pendapatan panti asuhan ini berasal dari sumbangan sukarela dan dana bantuan dari individu, perusahaan, dan lembaga amal. Selain itu, panti asuhan juga mengadakan kegiatan penggalangan dana seperti lelang amal dan acara amal lainnya.
