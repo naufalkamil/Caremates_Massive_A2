@@ -49,27 +49,27 @@ const transaksi2 = () => {
       <Navbarfirst />
 
       {/* Bagian Transaksi2 */}
-      <section className="barcode">
-        <div style={{ display: 'flex', paddingTop: '17%'}}>
-            <div className="col-6" style={{justifyContent:'center',paddingLeft:'7%',paddingTop: '0%' }}>
+      <section className="barcode" style={{zIndex: "1", width: "65%"}}>
+        <div style={{ display: 'flex', paddingTop: '14%'}}>
+            <div className="col-6 align-content-center text-center" style={{justifyContent:'center', paddingTop: '0%' }}>
                 <div>
-                    <h2 style={{fontWeight:'500', fontSize:'30px', color:'black', marginLeft:'100px'}}>Caremates</h2>
-                    <p style={{fontWeight:'200', fontSize:'15px', color:'black', marginLeft:'130px'}}>Donasi Panti</p>
+                    <h2 style={{fontWeight:'500', fontSize:'30px', color:'black'}}>Caremates</h2>
+                    <p style={{fontWeight:'200', fontSize:'15px', color:'black'}}>Donasi Panti</p>
+                    <img src={barcode} alt="logo" style={{width:'70%'}}/>
+                    <br></br>
+                    <img src={qris} alt="qris" style={{width:'30%', marginTop:'20px'}}/>
                 </div>
-                <div className=" logo col-md-4">
-                    <img src={barcode} alt="logo" style={{width:'240%', marginRight:'100px'}}/>
-                    <img src={qris} alt="qris" style={{width:'100%', marginTop:'20px', marginLeft : '110px'}}/>
-                </div>
+
             </div>
             <div className="col-6" style={{justifyContent:'center',paddingLeft:'16%',paddingTop: '14%' }} >
-            <p>ID Pembayaran: 12541-422154-12</p>
-            <label className="label">
-                <span className="label-text">Rp. 10.000</span>
-            </label>
-            <p style={{marginTop:'10px'}}>Waktu Pembayaran Tersisa : 8.00.15</p>
-            <div style={{paddingTop:'10px' ,paddingLeft:'10px'}}>
-            <Button variant="warning" style={{ width: '100%', height: '100%'}}>Download QRIS</Button>{' '}
-            </div>
+              <p>ID Pembayaran: 12541-422154-12</p>
+              <label className="label">
+                  <span className="label-text">Rp. 10.000</span>
+              </label>
+              <p style={{marginTop:'10px'}}>Waktu Pembayaran Tersisa : 8.00.15</p>
+              <div style={{paddingTop:'10px' ,paddingLeft:'10px'}}>
+              <Button variant="warning" style={{ width: '100%', height: '100%'}}>Download QRIS</Button>{' '}
+              </div>
             </div>
         </div>
         

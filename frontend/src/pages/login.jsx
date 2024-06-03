@@ -70,9 +70,9 @@ const LoginLogo = styled.div`
 const LoginForm = styled.div`
   width: 100%;
   max-width: 1000px;
-  height: 600px;
+  height: 95%;
   background: rgba(203, 200, 200, 0.468);
-  padding: 90px;
+  padding: 70px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
