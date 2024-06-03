@@ -1,7 +1,8 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "@fortawesome/fontawesome-free/css/all.min.css"; // Import FontAwesome
+import "@fortawesome/fontawesome-free/css/all.min.css";
+import galeri1 from '../img/img-galeri/galeri1.jpg';
 
 const Card = ({ imgSrc, totalDonasi, link = "#" }) => {
   return (
@@ -49,6 +50,7 @@ const Card = ({ imgSrc, totalDonasi, link = "#" }) => {
     </div>
   );
 };
+
 
 const BeriDonasi = () => {
   return (
@@ -144,6 +146,7 @@ const BeriDonasi = () => {
           }
         `}
       </style>
+
       <div className="background-square" style={styles.backgroundSquare}>
         <div className="row justify-content-center text-center pb-1">
           <div className="col-10">
@@ -159,9 +162,9 @@ const BeriDonasi = () => {
         <SearchBar />
         <div className="container pt-3">
           <div className="row justify-content-center text-start">
-            <Card imgSrc="img/img-panti/panti1.png" totalDonasi="15.000" />
-            <Card imgSrc="img/img-panti/panti2.png" totalDonasi="15.000" />
-            <Card imgSrc="img/img-panti/panti3.png" totalDonasi="15.000" />
+            <Card imgSrc={galeri1} totalDonasi="15.000" />
+            <Card imgSrc={galeri1} totalDonasi="15.000" />
+            <Card imgSrc={galeri1} totalDonasi="15.000" />
             <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
             <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
             <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
