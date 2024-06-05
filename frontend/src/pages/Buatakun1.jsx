@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Buatakun1 = ({ onNavigate }) => {
+const Buatakun1 = () => {
   const [text, setText] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setText(e.target.value);
@@ -17,7 +18,11 @@ const Buatakun1 = ({ onNavigate }) => {
       document.body.classList.remove('no-scroll');
     };
   }, []);
-  
+
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
+
   return (
     <div style={backgroundStyle}>
       <style>
@@ -37,90 +42,90 @@ const Buatakun1 = ({ onNavigate }) => {
       {/* Bagian home dengan slideshow dan ikon */}
       <section style={{width: '100%'}}>
         <div className="row" style={{paddingTop:'1%'}}>
-            <div className="col-1 justify-content-end align-content-center" style={{marginLeft: '20px'}}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
-                <path d="M12.5 30L27.5 15M12.5 30L27.5 45M12.5 30H47.5" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          <div className="col-1 justify-content-end align-content-center" style={{marginLeft: '20px'}}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none" onClick={() => handleNavigate(-1)} style={{cursor: 'pointer'}}>
+              <path d="M12.5 30L27.5 15M12.5 30L27.5 45M12.5 30H47.5" stroke="white" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-            </div>
-            <div className="col-10" style={{alignContent: 'center', justifyContent:'center', textAlign: 'center'}}>
-                <p style={{fontSize: '36px', fontWeight: '800', justifyContent: 'center', alignContent: 'center'}}>Buat Akun Lembaga</p>
-            </div>
+          </div>
+          <div className="col-10" style={{alignContent: 'center', justifyContent:'center', textAlign: 'center'}}>
+            <p style={{fontSize: '36px', fontWeight: '800', justifyContent: 'center', alignContent: 'center'}}>Buat Akun Lembaga</p>
+          </div>
         </div>
       </section>
       <section className="home" style={Buatakun1Style}>
         <div className="container" style={{width: '100%',  padding:'0', margin:'0'}}>
-            <div className="row" style={rowStyle}>
-                <div className="col" style={{display: 'flex', justifyContent: 'center', alignItems: 'center',padding:'1%',background: 'linear-gradient(90deg, rgba(15, 180, 170, 0.60) 0.02%, rgba(9, 135, 183, 0.60) 69.01%)', margin: '0', borderRadius: '20px 63px 0px 0px'}}>
-                    <p style={pnoStyle}>1</p>
-                    <p style={{fontWeight: '400', fontSize:'24px', margin:'0'}}>Data Lembaga</p>
-                </div>
-                <div className="col"  onClick={() => onNavigate('Buatakun3')} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding:'1%'}}>
-                  <p style={pnoStyle}>2</p>
-                    <p style={{fontWeight: '400', fontSize:'24px',color: '#4D96B6',margin:'0'}}>Verifikasi Data</p>
-                </div>
-                <div className="col"  onClick={() => onNavigate('Buatakun3')} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding:'1%'}}>
-                    <p style={pnoStyle}>3</p>
-                    <p style={{fontWeight: '400', fontSize:'24px',color: '#4D96B6',margin:'0'}}>Data PJ Lembaga</p>
-                </div>
+          <div className="row" style={rowStyle}>
+            <div className="col" style={{display: 'flex', justifyContent: 'center', alignItems: 'center',padding:'1%',background: 'linear-gradient(90deg, rgba(15, 180, 170, 0.60) 0.02%, rgba(9, 135, 183, 0.60) 69.01%)', margin: '0', borderRadius: '20px 63px 0px 0px'}}>
+              <p style={pnoStyle}>1</p>
+              <p style={{fontWeight: '400', fontSize:'24px', margin:'0'}}>Data Lembaga</p>
             </div>
-            <div className="col">
-              <p style={{ textAlign:'center', fontSize:'28px',marginBottom:'0', fontWeight: '400'}}>Data Lembaga</p>
+            <div className="col" onClick={() => handleNavigate('/buatakun2')} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding:'1%'}}>
+              <p style={pnoStyle}>2</p>
+              <p style={{fontWeight: '400', fontSize:'24px',color: '#4D96B6',margin:'0'}}>Verifikasi Data</p>
             </div>
-            <div className="row" style={{ display: 'flex', justifyContent: 'space-between', margin:'1%'}}>
-              <div className="col-5">
-                <p style={{margin:'0 0 0 1%', fontSize: '18px'}}>Nama Lembaga</p>
-                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width:'100%' }} type="text" name="nama" id="" placeholder= "Masukkan Nama Lembaga" />
-              </div>
-              <div className="col-5">
-                <p style={{margin:'0 0 0 1%', fontSize:'18px'}}>Alamat Lembaga</p>
-                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width: '100%'}} type="text" name="nama" id="" placeholder= "Masukkan Alamat Lembaga" />
-              </div>
+            <div className="col" onClick={() => handleNavigate('/buatakun3')} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding:'1%'}}>
+              <p style={pnoStyle}>3</p>
+              <p style={{fontWeight: '400', fontSize:'24px',color: '#4D96B6',margin:'0'}}>Data PJ Lembaga</p>
             </div>
-            <div className="row" style={{ display: 'flex', justifyContent: 'space-between', margin:'1%'}}>
-              <div className="col-5">
-                <p style={{margin:'0 0 0 1%', fontSize: '18px'}}>Alamat Email Resmi Lembaga</p>
-                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width:'100%' }} type="text" name="nama" id="" placeholder= "Masukkan Email Lembaga" />
-              </div>
-              <div className="col-5">
-                <p style={{margin:'0 0 0 1%', fontSize:'18px'}}>Nomor Telepon Lembaga</p>
-                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width: '100%'}} type="text" name="nama" id="" placeholder= "Masukkan Alamat Lembaga" />
-              </div>
+          </div>
+          <div className="col">
+            <p style={{ textAlign:'center', fontSize:'28px',marginBottom:'0', fontWeight: '400'}}>Data Lembaga</p>
+          </div>
+          <div className="row" style={{ display: 'flex', justifyContent: 'space-between', margin:'1%'}}>
+            <div className="col-5">
+              <p style={{margin:'0 0 0 1%', fontSize: '18px'}}>Nama Lembaga</p>
+              <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width:'100%' }} type="text" name="nama" id="" placeholder= "Masukkan Nama Lembaga" />
             </div>
-            <div className="row" style={{ display: 'flex', justifyContent: 'space-between', margin:'1%'}}>
-              <div className="col-5">
-                <p style={{margin:'0 0 0 1%', fontSize: '18px'}}>Website Lembaga</p>
-                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width:'100%' }} type="text" name="nama" id="" placeholder= "Alamat Website Lembaga" />
-              </div>
-              <div className="col-5">
-                <p style={{margin:'0 0 0 1%', fontSize:'18px'}}>Media Sosial Lembaga</p>
-                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width: '100%'}} type="text" name="nama" id="" placeholder= "Nama Media Sosial" />
-              </div>
+            <div className="col-5">
+              <p style={{margin:'0 0 0 1%', fontSize:'18px'}}>Alamat Lembaga</p>
+              <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width: '100%'}} type="text" name="alamat" id="" placeholder= "Masukkan Alamat Lembaga" />
             </div>
-            <div className="row" style={{ display: 'flex', justifyContent: 'space-between', margin:'1%'}}>
-              <div className="col-5">
-                <p style={{margin:'0 0 0 1%', fontSize: '18px'}}>Buat Kata Sandi</p>
-                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width:'100%' }} type="text" name="nama" id="" placeholder= "Buat Kata Sandi" />
-              </div>
-              <div className="col-5">
-                <p style={{margin:'0 0 0 1%', fontSize:'18px'}}>Konfirmasi Kata Sandi</p>
-                <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width: '100%'}} type="text" name="nama" id="" placeholder= "Konfimasi Kata Sandi" />
-              </div>
+          </div>
+          <div className="row" style={{ display: 'flex', justifyContent: 'space-between', margin:'1%'}}>
+            <div className="col-5">
+              <p style={{margin:'0 0 0 1%', fontSize: '18px'}}>Alamat Email Resmi Lembaga</p>
+              <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width:'100%' }} type="text" name="email" id="" placeholder= "Masukkan Email Lembaga" />
             </div>
+            <div className="col-5">
+              <p style={{margin:'0 0 0 1%', fontSize:'18px'}}>Nomor Telepon Lembaga</p>
+              <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width: '100%'}} type="text" name="telepon" id="" placeholder= "Masukkan Nomor Telepon Lembaga" />
+            </div>
+          </div>
+          <div className="row" style={{ display: 'flex', justifyContent: 'space-between', margin:'1%'}}>
+            <div className="col-5">
+              <p style={{margin:'0 0 0 1%', fontSize: '18px'}}>Website Lembaga</p>
+              <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width:'100%' }} type="text" name="website" id="" placeholder= "Alamat Website Lembaga" />
+            </div>
+            <div className="col-5">
+              <p style={{margin:'0 0 0 1%', fontSize:'18px'}}>Media Sosial Lembaga</p>
+              <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width: '100%'}} type="text" name="sosial" id="" placeholder= "Nama Media Sosial" />
+            </div>
+          </div>
+          <div className="row" style={{ display: 'flex', justifyContent: 'space-between', margin:'1%'}}>
+            <div className="col-5">
+              <p style={{margin:'0 0 0 1%', fontSize: '18px'}}>Buat Kata Sandi</p>
+              <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width:'100%' }} type="password" name="password" id="" placeholder= "Buat Kata Sandi" />
+            </div>
+            <div className="col-5">
+              <p style={{margin:'0 0 0 1%', fontSize:'18px'}}>Konfirmasi Kata Sandi</p>
+              <input style={{padding:'10px',border:'0', borderColor: 'transparent', outline:'none', borderRadius:'40px', width: '100%'}} type="password" name="confirm_password" id="" placeholder= "Konfimasi Kata Sandi" />
+            </div>
+          </div>
         </div>
       </section>
       <section style={buttonContainerStyle}>
-      <div className="row" style={{width: '100%',justifyContent:'space-between'}}>
+        <div className="row" style={{width: '100%',justifyContent:'space-between'}}>
           <div className="col-2" style={{display:'flex', justifyContent:'center'}}>
-          <Link to="/login" style={button2Style}>
-            Sudah Buat Akun
-          </Link>
+            <Link to="/login" style={button1Style}>
+              Sudah Buat Akun
+            </Link>
           </div>
           <div className="col-2" style={{display:'flex', justifyContent:'center'}}>
-          <Link to="/buatakun2" style={button2Style}>
-            Selanjutnya
-          </Link>
+            <Link to="/buatakun2" style={button2Style}>
+              Selanjutnya
+            </Link>
           </div>
-      </div>
+        </div>
       </section>
     </div>
   );
@@ -142,7 +147,7 @@ const backgroundStyle = {
 };
 
 const Buatakun1Style = {
-    position: 'fixed',
+  position: 'fixed',
   top: '50%',
   left: '50%',
   transform: 'translate(-50%, -50%)',
@@ -157,23 +162,23 @@ const Buatakun1Style = {
 
 const rowStyle = {
   width: '100%', 
-  margin:'0',  
-  padding:'0', 
+  margin: '0',  
+  padding: '0', 
   background: '#BFF9F3', 
   borderRadius: '20px 20px 0px 0px'
 };
 
 const pnoStyle = {
   fontWeight: '400', 
-  fontSize:'24px', 
-  margin:'0', 
+  fontSize: '24px', 
+  margin: '0', 
   color: '#4D96B6', 
-  backgroundColor:'#fff', 
+  backgroundColor: '#fff', 
   width: '40px', 
   height: '40px', 
-  borderRadius:'50%', 
-  justifyContent:'center', 
-  textAlign:'center',
+  borderRadius: '50%', 
+  justifyContent: 'center', 
+  textAlign: 'center',
   marginRight: '2%'
 };
 
@@ -195,6 +200,7 @@ const button1Style = {
   fontSize: '18px',
   textDecoration: 'none',
 };
+
 const button2Style = {
   padding: '10px',
   border: 'none',

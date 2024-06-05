@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Buatakun2 = ({ onNavigate }) => {
   const [text, setText] = useState('');
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setText(e.target.value);
@@ -16,6 +17,11 @@ const Buatakun2 = ({ onNavigate }) => {
       document.body.classList.remove('no-scroll');
     };
   }, []);
+
+  
+  const handleNavigate = (path) => {
+    navigate(path);
+  };
 
   return (
     <div style={backgroundStyle}>
@@ -37,7 +43,7 @@ const Buatakun2 = ({ onNavigate }) => {
       <section style={{width: '100%'}}>
         <div className="row" style={{paddingTop:'1%'}}>
             <div className="col-1 justify-content-end align-content-center" style={{marginLeft: '20px'}}>
-            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 60 60" fill="none" onClick={() => handleNavigate(-1)} style={{cursor: 'pointer'}}>
                 <path d="M12.5 30L27.5 15M12.5 30L27.5 45M12.5 30H47.5" stroke="white" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             </div>
