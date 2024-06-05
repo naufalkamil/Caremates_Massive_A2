@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Buatakun1 = ({ onNavigate }) => {
   const [text, setText] = useState('');
@@ -110,10 +111,14 @@ const Buatakun1 = ({ onNavigate }) => {
       <section style={buttonContainerStyle}>
       <div className="row" style={{width: '100%',justifyContent:'space-between'}}>
           <div className="col-2" style={{display:'flex', justifyContent:'center'}}>
-            <button style={button1Style}>Sudah Buat Akun</button>
+          <Link to="/login" style={button2Style}>
+            Sudah Buat Akun
+          </Link>
           </div>
           <div className="col-2" style={{display:'flex', justifyContent:'center'}}>
-          <button style={button2Style}>Selanjutnya</button>
+          <Link to="/buatakun2" style={button2Style}>
+            Selanjutnya
+          </Link>
           </div>
       </div>
       </section>
@@ -187,7 +192,8 @@ const button1Style = {
   backgroundColor: '#4D96B6',
   color: 'white',
   cursor: 'pointer',
-  fontSize: '18px'
+  fontSize: '18px',
+  textDecoration: 'none',
 };
 const button2Style = {
   padding: '10px',
@@ -196,7 +202,8 @@ const button2Style = {
   backgroundColor: '#fff',
   color: '#4D96B6',
   cursor: 'pointer',
-  fontSize: '18px'
+  fontSize: '18px',
+  textDecoration: 'none',
 };
 
 export default Buatakun1;

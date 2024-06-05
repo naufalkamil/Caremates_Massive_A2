@@ -3,6 +3,9 @@ import Navbarfirst from '../components/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import galeri1 from '../img/img-galeri/galeri1.jpg';
 import galeri2 from '../img/img-galeri/galeri2.jpg';
+import galeri3 from '../img/img-galeri/galeri3.jpg';
+import galeri4 from '../img/img-galeri/galeri4.jpg';
+import { Link } from 'react-router-dom';
 
 const Detailyayasan = () => {
   const [text, setText] = useState('');
@@ -94,15 +97,15 @@ const Detailyayasan = () => {
               <div className="row">
                 <div className="col-11">
                   <img className="m-1" style={{width:'20%', borderRadius:"10px"}} src={galeri1} alt="" />
-                  <img className="m-1" style={{width:'20%', borderRadius:"10px"}} src={galeri1} alt="" />
-                  <img className="m-1" style={{width:'20%', borderRadius:"10px"}} src={galeri1} alt="" />
-                  <img className="m-1" style={{width:'20%', borderRadius:"10px"}} src={galeri1} alt="" />
+                  <img className="m-1" style={{width:'20%', borderRadius:"10px"}} src={galeri2} alt="" />
+                  <img className="m-1" style={{width:'20%', borderRadius:"10px"}} src={galeri3} alt="" />
+                  <img className="m-1" style={{width:'20%', borderRadius:"10px"}} src={galeri4} alt="" />
                 </div>
-                <div className="col text-center align-content-center rounded-5 m-2 p-0 mt-4" style={{background:"rgba(255, 255, 255, 0.80)", width:"36px", height:"36px"}}>
+                <Link to="/galeripanti" className="col text-center align-content-center rounded-5 m-2 p-0 mt-4" style={{background:"rgba(255, 255, 255, 0.80)", width:"36px", height:"36px"}}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="15" height="24" viewBox="0 0 15 24" fill="none">
                   <path d="M13.3594 12C13.3593 12.2129 13.3215 12.4214 13.2504 12.6013C13.1792 12.7812 13.0776 12.925 12.9574 13.0162L4.05115 19.7662C3.88296 19.89 3.69105 19.9027 3.51706 19.8015C3.34308 19.7002 3.20106 19.4933 3.12184 19.2256C3.04261 18.9579 3.03257 18.651 3.0939 18.3715C3.15522 18.092 3.28296 17.8625 3.44939 17.7328L11.0156 12L3.44939 6.26717C3.28296 6.13745 3.15522 5.90794 3.0939 5.62846C3.03257 5.34898 3.04261 5.04207 3.12184 4.77436C3.20106 4.50665 3.34308 4.29973 3.51706 4.19852C3.69105 4.0973 3.88296 4.10996 4.05115 4.23373L12.9574 10.9837C13.0776 11.0749 13.1792 11.2188 13.2504 11.3987C13.3215 11.5786 13.3593 11.7871 13.3594 12Z" fill="#373737"/>
                 </svg>
-                </div>
+                </Link>
               </div>
             </div>
           </div>

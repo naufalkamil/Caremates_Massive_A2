@@ -4,6 +4,7 @@ import slide1 from '../img/img-home/slide 1.png';
 import slide2 from '../img/img-home/slide 2.png';
 import slide3 from '../img/img-home/slide 3.png';
 import donate1 from '../img/img-home/donate 1.png';
+import { Link } from 'react-router-dom';
 
 const Beranda = () => {
   // Fungsi untuk menampilkan slide secara otomatis
@@ -134,7 +135,9 @@ const Beranda = () => {
           </div>
           <div className="col-md-3 icon mt-5 pt-5">
             <img src={donate1} alt="icon" />
-            <div className="button-daftar">Daftarkan Lembaga Anda</div>
+            <Link to="/buatakun1" className="button-daftar" style={{textDecoration: 'none',}}>
+              Daftarkan Lembaga Anda
+            </Link>
           </div>
         </div>
       </section>

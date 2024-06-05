@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const Buatakun2 = ({ onNavigate }) => {
   const [text, setText] = useState('');
@@ -102,7 +103,9 @@ const Buatakun2 = ({ onNavigate }) => {
       <section style={buttonContainerStyle}>
       <div className="row" style={{width: '100%',justifyContent:'end'}}>
           <div className="col-2" style={{display:'flex', justifyContent:'center'}}>
-          <button style={button1Style}>Selanjutnya</button>
+          <Link to="/buatakun3" style={button1Style}>
+            Selanjutnya
+          </Link>
           </div>
       </div>
       </section>
@@ -177,7 +180,8 @@ const button1Style = {
   backgroundColor: '#fff',
   color: '#4D96B6',
   cursor: 'pointer',
-  fontSize: '18px'
+  fontSize: '18px',
+  textDecoration: 'none',
 };
 
 export default Buatakun2;
