@@ -62,7 +62,7 @@ const Homepanti = () => {
           }
 
           .logo img {
-            width: 80%;
+            width: 70%;
             justify-content: left;
             padding-right: 10%;
             padding-top: 50%;
@@ -99,10 +99,6 @@ const Homepanti = () => {
               padding-left: 0;
               padding-top: 10%;
             }
-            .logo img {
-              width: 70%;
-              padding: 0;
-            }
             .button-ajukan {
               font-size: 14px;
               padding: 8px 16px;
@@ -114,9 +110,6 @@ const Homepanti = () => {
               font-size: 16px;
               padding-top: 15%;
             }
-            .logo img {
-              width: 60%;
-            }
             .button-ajukan {
               font-size: 12px;
               padding: 6px 12px;
@@ -127,12 +120,12 @@ const Homepanti = () => {
       <Navbarfirst />
 
       {/* halaman */}
-      <section className="home" style={{paddingTop:'2%'}}>
+      <section className="home" style={{paddingTop:'0%'}}>
         <Container>
           <Row>
-            <Col xs={12} md={8} style={{ paddingTop: '25%' }}>
-              <div className="icon" style={{ justifyContent: 'center', paddingRight: '3%', color: 'white', fontFamily: 'Open Sans', textAlign: 'justify', fontSize: '22px', fontStyle: 'normal', fontWeight: '400', lineHeight: 'normal', marginBottom: '0' }}>
-                <h2 style={{ paddingLeft: '7%' }}>Selamat Datang! <br />Selamat Bergabung dengan Caremates.<br />
+            <Col xs={12} md={8} style={{ paddingTop: '20%' }}>
+              <div className="icon" style={{ justifyContent: 'center', paddingRight: '3%', color: 'white', fontFamily: 'Open Sans', textAlign: 'justify', fontSize: '', fontStyle: 'normal', fontWeight: '0px', lineHeight: 'normal', marginBottom: '0' }}>
+                <h2 style={{ paddingLeft: '7%', fontSize:'180%' }}>Selamat Datang! <br />Selamat Bergabung dengan Caremates.<br />
                   Sebelum melakukan penggalangan dana, pastikan<br /> semua data pada profil telah dilengkapi.</h2>
               </div>
             </Col>
@@ -144,13 +137,14 @@ const Homepanti = () => {
             </Col>
           </Row>
           <Row>
-            <Col xs={12} style={{ paddingTop: '7%' }}>
+            <Col xs={12} style={{ paddingTop: '0%' }}>
               <div className="icon col-md-12 justify-content-center">
                 <div className="button-ajukan">Ajukan Penggalangan Dana</div>
               </div>
             </Col>
           </Row>
         </Container>
+        
       </section>
     </div>
   );
