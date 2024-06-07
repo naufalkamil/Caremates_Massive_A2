@@ -145,7 +145,8 @@ const BeriDonasi = () => {
           }
         `}
       </style>
-
+      {/* Komponen Navbar */}
+      <Navbarfirst />
       {/* <div className="background-square" style={styles.backgroundSquare}> */}
       <div className="row justify-content-center text-center pb-1">
         <div className="col-10">
