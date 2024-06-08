@@ -14,7 +14,9 @@ function Navbarfirst({ activeLinkProp }) {
       '/': 'home',
       '/beridonasi': 'features',
       '/tentangkami': 'about',
-      '/pusatbantuan': 'help'
+      '/pusatbantuan': 'help',
+      '/detailyayasan': 'features',
+      '/galeripanti': 'features',
     };
     const currentPath = location.pathname;
     setActiveLink(pathToKey[currentPath] || 'home');

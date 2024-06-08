@@ -10,7 +10,7 @@ const tentangkami = () => {
   }, []);
   const iconStyle = {
     color: '#4D96B6',
-    fontSize: '50px',
+    fontSize: '300%',
     backgroundColor: 'white',
     padding: '10px',
     borderRadius: '40%',
@@ -88,19 +88,19 @@ const tentangkami = () => {
       <section className="home">
         <div className="container1 justify-content-center" style={{ display: 'flex', paddingTop: '7%'}}>
           <div className="logo-container col-md-6">
-            <div className="logo">
+            <div className="logo" style={{width: '80%'}}>
               <img src={logo} alt="logo" />
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '50px', paddingLeft:'3%', paddingTop: '70%' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '10%', paddingLeft:'3%', paddingTop: '70%' }}>
                     <BsEnvelope style={iconStyle} />
                     <BsInstagram style={iconStyle} />
                     <BsWhatsapp style={iconStyle} />
                 </div>
           </div>
           
-          <div className="icon col-md-6 justify-content-center " style={{justifyContent: 'center', paddingTop: '0%', paddingRight: '3%',color: 'white', fontFamily: 'Open Sans',
+          <div className="icon col-md-6 justify-content-center " style={{justifyContent: 'center', paddingTop: '0%', paddingRight: '7%',color: 'white', fontFamily: 'Open Sans',
                     textAlign:'justify',
-                    fontSize: '22px',
+                    fontSize: '110%',
                     fontStyle: 'normal',
                     fontWight: '400',
                     lineHeight: 'normal',

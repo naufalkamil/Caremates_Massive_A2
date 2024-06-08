@@ -16,4 +16,5 @@ const database = mysql.createConnection({
     }
     console.log(`Terhubung ke database dengan ID ` + database.threadId);
   });
+
   module.exports = database;
