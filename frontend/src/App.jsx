@@ -11,8 +11,12 @@ import Galeripanti from "./pages/Galeripanti";
 import Transaksi2 from "./pages/transaksi2";
 import Login from "./pages/login";
 import Pengajuanpenggalangan from "./pages/Pengajuanpenggalangan";
+import Pengajuanpencairan from "./pages/Pengajuanpencairan";
 import Detailyayasan from "./pages/Detailyayasan";
 import Homepanti from "./pages/Homepanti";
+import LogoutPopup from './pages/Logout';
+import Sudahpenggalangan from './pages/sudahpenggalangan';
+import Detaildonasi from "./pages/Detaildonasi";
 
 function App() {
   return (
@@ -29,8 +33,12 @@ function App() {
         <Route path="/transaksi2" element={<Transaksi2 />} />
         <Route path="/login" element={<Login />} />
         <Route path="/pengajuanpenggalangan" element={<Pengajuanpenggalangan />} />
+        <Route path="/pengajuanpencairan" element={<Pengajuanpencairan />} />
         <Route path="/detailyayasan" element={<Detailyayasan />} />
         <Route path="/homepanti" element={<Homepanti />} />
+        <Route path="/logout" element={<LogoutPopup />} />
+        <Route path="/sudahpenggalangan" element={<Sudahpenggalangan />} />
+        <Route path="/detaildonasi" element={<Detaildonasi />} />
       </Routes>
     </BrowserRouter>
   );
