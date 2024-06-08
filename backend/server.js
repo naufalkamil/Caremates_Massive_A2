@@ -1,20 +1,43 @@
-// src/server.js
-import express from 'express';
-import db from './config/database.js';
-import userRoutes from './routes/userRoutes.js';
-
+const express = require("express");
 const app = express();
+const database = require("./database");
+const PORT = 8000;
+const adminRoutes = require("./routes/adminRoutes");
+const pusatbantuanRoutes = require("./routes/pusatbantuanRoutes");
+const lembagaRoutes = require("./routes/lembagaRoutes");
+const penanggungjawabRoutes = require("./routes/penanggungjawabRoutes");
+const bankRoutes = require("./routes/bankRoutes");
+const galeriRoutes = require("./routes/galeriRoutes");
+const danaRoutes = require("./routes/danaController");
+const transaksi_donasiRoutes = require("./routes/transaksi_donasiRoutes");
+const transaksi_lembagaRoutes = require("./routes/transaksi_lembagaRoutes");
 
+// Middleware
+// Ambil data dari client yang dikirim berbentuk json
 app.use(express.json());
 
-db.authenticate()
-  .then(() => console.log('Database Connected...'))
-  .catch(err => console.log('Error: ' + err));
+// Menangangi data dari client atau browser
+app.use(express.urlencoded({ extended: true }));
 
-db.sync()
-  .then(() => console.log('Tables synced...'))
-  .catch(err => console.log('Error: ' + err));
+// ROUTE http://localhost:8000/
+// METHOD GET
+app.get("/", (req, res) => {
+  res.json({
+    message: "Berhasil melakukan routing✨",
+  });
+});
 
-app.use('/api/users', userRoutes);
+// ROUTES
+app.use("/api/admin", adminRoutes);
+app.use("/api/pusatbantuan", pusatbantuanRoutes);
+app.use("/api/lembaga", lembagaRoutes);
+app.use("/api/penanggungjawab", penanggungjawabRoutes);
+app.use("/api/bank", bankRoutes);
+app.use("/api/galeri", galeriRoutes);
+app.use("/api/dana", danaRoutes);
+app.use("/api/transaksi_donasi", transaksi_donasiRoutes);
+app.use("/api/transaksi_lembaga", transaksi_lembagaRoutes);
 
-app.listen(5000, () => console.log('Server started on port 5000'));
+app.listen(PORT, () =>
+    console.log(`Server is running on http://localhost:${PORT}`)
+  );
