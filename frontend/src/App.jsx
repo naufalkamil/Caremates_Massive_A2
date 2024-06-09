@@ -17,6 +17,7 @@ import Homepanti from "./pages/Homepanti";
 import LogoutPopup from './pages/Logout';
 import Sudahpenggalangan from './pages/sudahpenggalangan';
 import Detaildonasi from "./pages/Detaildonasi";
+import Loginadmin from "./pages/loginadmin";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/logout" element={<LogoutPopup />} />
         <Route path="/sudahpenggalangan" element={<Sudahpenggalangan />} />
         <Route path="/detaildonasi" element={<Detaildonasi />} />
+        <Route path="/loginadmin" element={<Loginadmin />} />
       </Routes>
     </BrowserRouter>
   );

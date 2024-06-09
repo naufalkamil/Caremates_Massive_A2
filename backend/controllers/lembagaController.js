@@ -36,15 +36,15 @@ const getLembagaById = (req, res) => {
 };
 
 const createNewLembaga = (req, res) => {
-    const{nama, alamat, email, nomor_telepon, website, media_sosial, kata_sandi, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail } = req.body;
-    if(!nama || !alamat || !email || !nomor_telepon || !website || !media_sosial || !kata_sandi || !nomor_akta || !nomor_izin || !jumlah_tanggungan || !detail){
+    const{nama, alamat, nomor_telepon, website, media_sosial, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail } = req.body;
+    if(!nama || !alamat || !nomor_telepon || !website || !media_sosial || !nomor_akta || !nomor_izin || !jumlah_tanggungan || !detail){
         return res.status(400).json({
-        error: "silahkan isi field nama, alamat, email, nomor_telepon, website, media_sosial, kata_sandi, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail"
+        error: "silahkan isi field nama, alamat, nomor_telepon, website, media_sosial, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail"
         });
     }
     database.query(
-        `INSERT INTO lembaga (nama, alamat, email, nomor_telepon, website, media_sosial, kata_sandi, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
-        [nama, alamat, email, nomor_telepon, website, media_sosial, kata_sandi, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail],
+        `INSERT INTO lembaga (nama, alamat, nomor_telepon, website, media_sosial, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+        [nama, alamat, nomor_telepon, website, media_sosial, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail],
         (err, results) => {
           if (err) {
             console.error(err);
@@ -66,13 +66,13 @@ const createNewLembaga = (req, res) => {
 }   
 const updateLembagaById = (req, res) => {
     const {id} = req.params;
-    const { nama, alamat, email, nomor_telepon, website, media_sosial, kata_sandi, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail } = req.body;
+    const { nama, alamat, nomor_telepon, website, media_sosial, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail } = req.body;
     if ( !id || !nama || !alamat || !email || !nomor_telepon || !website || !media_sosial || !kata_sandi || !nomor_akta || !nomor_izin || !dokumen_resmi || !logo || !foto_sampul || !jumlah_tanggungan || !detail ) {
         return  res.status(400).json({
-        error: "Silahkan isi field id, nama, alamat, email, nomor_telepon, website, media_sosial, kata_sandi, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail"
+        error: "Silahkan isi field id, nama, alamat, nomor_telepon, website, media_sosial, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail"
         });
     }
-    database.query(`UPDATE lembaga SET nama = ?, alamat = ?, email = ?, nomor_telepon = ?, website = ?, media_sosial = ?, kata_sandi = ?, nomor_akta = ?, nomor_izin = ?, dokumen_resmi = ?, logo = ?, foto_sampul = ?, jumlah_tanggungan = ?, detail = ? WHERE id = ?`, [nama, alamat, email, nomor_telepon, website, media_sosial, kata_sandi, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail, id], (err, results) => {
+    database.query(`UPDATE lembaga SET nama = ?, alamat = ?, email = ?, nomor_telepon = ?, website = ?, media_sosial = ?, kata_sandi = ?, nomor_akta = ?, nomor_izin = ?, dokumen_resmi = ?, logo = ?, foto_sampul = ?, jumlah_tanggungan = ?, detail = ? WHERE id = ?`, [nama, alamat, nomor_telepon, website, media_sosial, nomor_akta, nomor_izin, dokumen_resmi, logo, foto_sampul, jumlah_tanggungan, detail, id], (err, results) => {
         if(err) {
             console.error(err);
             res.status(500).json({
