@@ -19,5 +19,8 @@ const log_lembagaController = require("../controllers/log_lembagaController");
   
   // method get dengan parameter id
   router.get("/:id",log_lembagaController.getLog_lembagaById);
+
+  // Endpoint untuk login
+router.post("/login", log_lembagaController.login);
   
 module.exports = router;

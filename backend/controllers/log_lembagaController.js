@@ -115,10 +115,47 @@ const deleteLog_lembagaById = (req, res) => {
     })
 };
 
+const login = (req, res) => {
+    const { email, kata_sandi } = req.body;
+  
+    // Periksa apakah email dan kata sandi telah diberikan
+    if (!email || !kata_sandi) {
+      return res.status(400).json({ error: "Silakan masukkan email dan kata sandi" });
+    }
+  
+    // Query ke database untuk mendapatkan pengguna dengan email yang diberikan
+    database.query(
+      "SELECT * FROM log_lembaga WHERE email = ?",
+      [email],
+      (err, results) => {
+        if (err) {
+          console.error(err);
+          return res.status(500).json({ error: "Internal Server Error" });
+        }
+  
+        // Periksa apakah pengguna dengan email yang diberikan ditemukan
+        if (results.length === 0) {
+          return res.status(401).json({ error: "Email tidak ditemukan" });
+        }
+  
+        const user = results[0];
+  
+        // Verifikasi kata sandi
+        if (user.kata_sandi !== kata_sandi) {
+          return res.status(401).json({ error: "Kata sandi salah" });
+        }
+  
+        // Jika email dan kata sandi cocok, kirimkan respons sukses
+        return res.json({ message: "Berhasil login" });
+      }
+    );
+  };
+
 module.exports = {
     getAllLog_lembaga, 
     getLog_lembagaById,
     createNewLog_lembaga,
     updateLog_lembagaById,
     deleteLog_lembagaById, 
+    login,
 }

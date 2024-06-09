@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const database = require("./database");
 const PORT = 8000;
@@ -13,6 +14,8 @@ const transaksi_donasiRoutes = require("./routes/transaksi_donasiRoutes");
 const transaksi_lembagaRoutes = require("./routes/transaksi_lembagaRoutes");
 const log_lembagaRoutes = require("./routes/log_lembagaRoutes");
 
+// gunakan cors
+app.use(cors());
 // Middleware
 // Ambil data dari client yang dikirim berbentuk json
 app.use(express.json());
