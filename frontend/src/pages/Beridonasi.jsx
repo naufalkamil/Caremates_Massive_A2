@@ -1,4 +1,5 @@
 import React from "react";
+import Navbarfirst from "../components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -147,30 +148,31 @@ const BeriDonasi = () => {
       </style>
       {/* Komponen Navbar */}
       <Navbarfirst />
-      {/* <div className="background-square" style={styles.backgroundSquare}> */}
-      <div className="row justify-content-center text-center pb-1">
-        <div className="col-10">
-          <p style={styles.text}>
-            Caremates berperan sebagai jembatan dengan tujuan terciptanya
-            kesejahteraan bagi semua saudara kita yang membutuhkan. Caremates
-            terhubung dengan lebih dari 150 lembaga panti asuhan di Indonesia,
-            temukan lembaga yang tepat untuk menyalurkan donasi Anda di
-            Caremates.
-          </p>
+
+      <div className="background-square" style={styles.backgroundSquare}>
+        <div className="row justify-content-center text-center pb-1">
+          <div className="col-10">
+            <p style={styles.text}>
+              Caremates berperan sebagai jembatan dengan tujuan terciptanya
+              kesejahteraan bagi semua saudara kita yang membutuhkan. Caremates
+              terhubung dengan lebih dari 150 lembaga panti asuhan di Indonesia,
+              temukan lembaga yang tepat untuk menyalurkan donasi Anda di
+              Caremates.
+            </p>
+          </div>
+        </div>
+        <SearchBar />
+        <div className="container pt-3">
+          <div className="row justify-content-center text-start">
+            <Card imgSrc={galeri1} totalDonasi="15.000" />
+            <Card imgSrc={galeri1} totalDonasi="15.000" />
+            <Card imgSrc={galeri1} totalDonasi="15.000" />
+            <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
+            <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
+            <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
+          </div>
         </div>
       </div>
-      <SearchBar />
-      <div className="container pt-3">
-        <div className="row justify-content-center text-start">
-          <Card imgSrc={galeri1} totalDonasi="15.000" />
-          <Card imgSrc={galeri1} totalDonasi="15.000" />
-          <Card imgSrc={galeri1} totalDonasi="15.000" />
-          <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
-          <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
-          <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
-        </div>
-      </div>
-      {/* </div> */}
     </section>
   );
 };
@@ -194,21 +196,19 @@ const SearchBar = () => {
 };
 
 const styles = {
-  // home: {
-  //   padding: "100px 30px",
-  // },
-  // backgroundSquare: {
-  //   position: "fixed",
-  //   top: "50%",
-  //   left: "50%",
-  //   transform: "translate(-50%, -50%)",
-  //   width: "88%",
-  //   height: "88%",
-  //   borderRadius: "20px",
-  //   backgroundColor: "#ffffff6b",
-  //   zIndex: "-1",
-  //   overflow: "hidden",
-  // },
+  home: {
+    padding: "100px 30px",
+  },
+  backgroundSquare: {
+    position: "fixed",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "88%",
+    height: "88%",
+    zIndex: "-1",
+    overflow: "hidden",
+  },
   text: {
     color: "white",
     fontFamily: "Open Sans",

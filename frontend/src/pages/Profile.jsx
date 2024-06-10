@@ -202,14 +202,16 @@ const styles = {
   sidebar: {
     flex: "0 1 250px",
     marginTop: "7%",
-    height: "80%",
+    height: "70%",
     backgroundColor: "#ffffff6b",
     padding: "10px",
     borderRadius: "10px",
+    overflow: "auto", // Add this line to handle overflow
+    maxWidth: "100%", // Ensure sidebar does not exceed the container width
   },
   h3: {
     color: "#fff",
-    fontSize: "20px",
+    fontSize: "13px",
     fontWeight: "bold",
   },
   profile: {
@@ -242,7 +244,7 @@ const styles = {
     padding: 0,
   },
   menuitem: {
-    marginBottom: "20px", // Add margin bottom to each list item
+    marginBottom: "5px", // Add margin bottom to each list item
   },
   button: {
     width: "100%",
@@ -251,35 +253,40 @@ const styles = {
     borderRadius: "10px",
     marginBottom: "10px",
     border: "none",
+    fontSize: "13px",
   },
   content: {
     flex: 1,
     marginTop: "7%",
-    height: "80%",
+    height: "70%",
     backgroundColor: "#ffffff6b",
     padding: "10px",
     borderRadius: "10px",
+    overflow: "auto",
   },
   h2: {
     marginTop: "3%",
-    marginLeft: "20%",
     color: "#fff",
-    fontSize: "40px",
+    fontSize: "25px",
     fontWeight: "bold",
+    textAlign: "center",
   },
   "@media (max-width: 768px)": {
     container: {
       flexDirection: "column",
       padding: "0 20px",
+      height: "auto", // Add this line to allow the container to grow
     },
     sidebar: {
       width: "100%",
       marginTop: "20px",
       height: "auto",
+      overflow: "visible", // Ensure the sidebar content is visible on small screens
     },
     content: {
       marginTop: "20px",
       height: "auto",
+      marginLeft: "0", // Add this line to center the content
     },
     h2: {
       marginLeft: "0",
