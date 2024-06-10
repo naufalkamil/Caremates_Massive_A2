@@ -1,5 +1,7 @@
-import React from "react";
-import styled, { createGlobalStyle, keyframes } from "styled-components";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import authService from '../api/authservice';
+import styled, { createGlobalStyle, keyframes } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -7,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   body {
     margin: 0;
     padding: 0;
@@ -143,6 +145,26 @@ const Button = styled.button`
 `;
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [kata_sandi, setKata_sandi] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await authService.login(email, kata_sandi);
+      setSuccess('Login berhasil');
+      setError('');
+      console.log(response); // Handle the login response as needed
+      navigate('/homepanti'); // Redirect to /homepanti upon successful login
+    } catch (err) {
+      setError(err.message);
+      setSuccess('');
+    }
+  };
+
   return (
     <Background>
       <GlobalStyle />
@@ -152,7 +174,7 @@ const Login = () => {
         </LoginLogo>
         <LoginForm>
           <h2>Selamat Datang!</h2>
-          <form>
+          <form onSubmit={handleSubmit}>
             <FormGroup>
               <label htmlFor="email">Alamat Email</label>
               <input
@@ -160,6 +182,8 @@ const Login = () => {
                 id="email"
                 name="email"
                 placeholder="Masukan Email Lembaga"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </FormGroup>
@@ -170,9 +194,13 @@ const Login = () => {
                 id="password"
                 name="password"
                 placeholder="Masukan Kata Sandi"
+                value={kata_sandi}
+                onChange={(e) => setKata_sandi(e.target.value)}
                 required
               />
             </FormGroup>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {success && <p style={{ color: 'green' }}>{success}</p>}
             <Button type="submit">Masuk</Button>
           </form>
         </LoginForm>
