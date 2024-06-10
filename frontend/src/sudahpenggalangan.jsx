@@ -75,8 +75,8 @@ const Sudahpenggalangan = () => {
       <section className="home">
         <div className="container1 justify-content-center" style={{ display: 'flex', paddingTop: '12%'}}>
             <div style={{paddingTop:'9%', textAlign: 'center'}}>
-                <h4 style={{fontWeight: 'bold'}}>Selamat Datang!</h4>
-                <p style={{fontWeight: '300',fontSize:'110%'}}>Berikut rincian penggalangan dana yang sudah diajukan untuk Pengembangan <br/> fasilitas hafiz Qur’an 
+                <h6 style={{fontWeight: 'bold'}}>Selamat Datang!</h6>
+                <p style={{fontWeight: '300',fontSize:'90%'}}>Berikut rincian penggalangan dana yang sudah diajukan untuk Pengembangan <br/> fasilitas hafiz Qur’an 
                     Yayasan Yatim Piatu Roudlotul Jannah. </p>
             </div>
             <div className="background-kuning" style={backgroundkuningStyle}>
@@ -87,7 +87,7 @@ const Sudahpenggalangan = () => {
                       <Col className='text-end' style={bglist} ><span style={{color:'black' }}>Donasi Dibutuhkan: Rp. {donationNeeded} </span></Col>
                     </Row>
             </div>
-            <div className="d-flex flex-row-reverse" style={{ width: '100%', paddingTop:'3%'}}>
+            <div className="d-flex flex-row-reverse" style={{ width: '100%', paddingTop:'0%'}}>
             <Button className='button-merah' variant="">Hentikan Penggalangan Dana</Button>
             <Button className='button' variant=""style={{ marginRight: '20px' }}>Ajukan Pencairan Dana</Button>
             </div>
@@ -95,30 +95,30 @@ const Sudahpenggalangan = () => {
                 <div className='col-6'>
                   <p style={{textAlign:'center', fontFamily: 'Open Sans', fontWeight: '300', fontSize:'20px'}}>Detail Pemasukan</p>
                   <hr style={{border:'4px solid', color:'#4D96B6',borderRadius: '30px'}}/>
-                  <div className='row' style={{background:"rgba(255, 255, 255, 0.25)", borderRadius:"50px"}}>
+                  <div className='row' style={{background:"rgba(255, 255, 255, 0.25)", borderRadius:"50px", height:'18%'}}>
                   <Row className="align-items-center">
                     <Col xs="auto">
-                      <BsFillPersonFill style={{ width: "35px", height: "35px" }} />
+                      <BsFillPersonFill style={{ width: "25px", height: "35px" }} />
                     </Col>
                     <Col>
                       <p style={{marginTop:'2%', fontSize:'90%'}}>Kawan caremates berdonasi Rp.5000<br/><span style={{fontSize:'60%'}}>5 jam yang lalu</span></p> 
                     </Col>
                   </Row>
                   </div>
-                  <div className='row' style={{background:"rgba(255, 255, 255, 0.25)", borderRadius:"50px", marginTop:'2%'}}>
+                  <div className='row' style={{background:"rgba(255, 255, 255, 0.25)", borderRadius:"50px", marginTop:'2%', height:'18%'}}>
                   <Row className="align-items-center">
                     <Col xs="auto">
-                      <BsFillPersonFill style={{ width: "35px", height: "35px" }} />
+                      <BsFillPersonFill style={{ width: "25px", height: "35px" }} />
                     </Col>
                     <Col>
                       <p style={{marginTop:'2%', fontSize:'90%'}}>Kawan caremates berdonasi Rp.5000<br/><span style={{fontSize:'60%'}}>5 jam yang lalu</span></p> 
                     </Col>
                   </Row>
                   </div>
-                  <div className='row' style={{background:"rgba(255, 255, 255, 0.25)", borderRadius:"50px", marginTop:'2%'}}>
+                  <div className='row' style={{background:"rgba(255, 255, 255, 0.25)", borderRadius:"50px", marginTop:'2%', height:'18%'}}>
                   <Row className="align-items-center">
                     <Col xs="auto">
-                      <BsFillPersonFill style={{ width: "35px", height: "35px" }} />
+                      <BsFillPersonFill style={{ width: "25px", height: "35px" }} />
                     </Col>
                     <Col>
                       <p style={{marginTop:'2%', fontSize:'90%'}}>Kawan caremates berdonasi Rp.5000<br/><span style={{fontSize:'60%'}}>5 jam yang lalu</span></p> 
@@ -129,7 +129,7 @@ const Sudahpenggalangan = () => {
                 <div className='col-6'>
                   <p style={{textAlign:'center', fontFamily: 'Open Sans', fontWeight: '300', fontSize:'20px'}}>Detail Pengeluaran</p>
                   <hr style={{border:'4px solid', color:'white',borderRadius: '30px'}}/>
-                  <div className='row' style={{background:"rgba(255, 255, 255, 0.25)", borderRadius:"30px"}}>
+                  <div className='row' style={{background:"rgba(255, 255, 255, 0.25)", borderRadius:"30px", height:'32%'}}>
                   <Row className="align-items-center">
                     <Col>
                       <p style={{marginTop:'2%', fontSize:'80%'}}>Pencairan Dana II</p> 
@@ -155,7 +155,7 @@ const Sudahpenggalangan = () => {
                     </Col>
                   </Row>
                   </div>                   
-                  <div className='row' style={{background:"rgba(255, 255, 255, 0.25)", borderRadius:"30px", marginTop:'1%'}}>
+                  <div className='row' style={{background:"rgba(255, 255, 255, 0.25)", borderRadius:"30px", marginTop:'1%', height:'32%'}}>
                   <Row className="align-items-center">
                     <Col>
                       <p style={{marginTop:'1%', fontSize:'80%'}}>Pencairan Dana II</p> 
@@ -210,7 +210,7 @@ const backgroundStyle = {
 
   const backgroundkuningStyle = {
     position: 'fixed',
-    top: '38%',
+    top: '30%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: '80%',
