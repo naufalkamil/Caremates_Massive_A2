@@ -208,7 +208,7 @@ const styles = {
   search: {
     display: "flex",
     justifyContent: "center",
-    marginTop: "30px",
+    marginTop: "20px",
     marginBottom: "30px",
   },
   searchInput: {
@@ -241,7 +241,7 @@ const styles = {
   card: {
     background: "rgba(255, 255, 255, 0.50)",
     border: "none",
-    marginTop: "30px",
+    marginTop: "20px",
     marginBottom: "20px",
   },
   cardBody: {
