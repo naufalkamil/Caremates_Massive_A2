@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Navbarfirst from '../components/Navbar';
 import galeri1 from '../img/img-galeri/galeri1.jpg';
 import galeri2 from '../img/img-galeri/galeri2.jpg';
+import galeri3 from '../img/img-galeri/galeri3.jpg';
+import galeri4 from '../img/img-galeri/galeri4.jpg';
 
 const Galeripanti = () => {
   const [text, setText] = useState('');
@@ -71,10 +73,10 @@ const Galeripanti = () => {
               <img src={galeri2} alt="galeri2" style={imgStyle}/>
             </div>
             <div className="col text-center pb-5">
-              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+              <img src={galeri3} alt="galeri1" style={imgStyle}/>
             </div>
             <div className="col text-center pb-5">
-              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+              <img src={galeri4} alt="galeri1" style={imgStyle}/>
             </div>
             <div className="col text-center pb-5">
               <img src={galeri1} alt="galeri1" style={imgStyle}/>

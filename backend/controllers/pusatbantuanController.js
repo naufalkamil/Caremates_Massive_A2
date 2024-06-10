@@ -37,9 +37,9 @@ const getPusatbantuanById = (req, res) => {
 
 const createNewPusatbantuan = (req, res) => {
     const{ pertanyaan, jawaban } = req.body;
-    if(!pertanyaan || !jawaban){
+    if(!pertanyaan ){
         return res.status(400).json({
-        error: "silahkan isi field pertanyaan dan jawaban"
+        error: "silahkan isi field pertanyaan"
         });
     }
     database.query(

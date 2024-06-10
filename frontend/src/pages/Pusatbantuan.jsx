@@ -4,12 +4,33 @@ import Navbarfirst from '../components/Navbar';
 import Button from 'react-bootstrap/Button';
 import Accordion from 'react-bootstrap/Accordion';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import pusatbantuanService from '../api/pusatbantuanservice';
 
 const Pusatbantuan = () => {
   const [text, setText] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
 
   const handleChange = (e) => {
     setText(e.target.value);
+  };
+
+  const handleSubmit = async () => {
+    if (!text) {
+      setError('Pertanyaan tidak boleh kosong');
+      setSuccess('');
+      return;
+    }
+
+    try {
+      await pusatbantuanService.createPusatbantuan(text, ''); // Jawaban bisa kosong atau diisi sesuai kebutuhan
+      setSuccess('Pertanyaan berhasil diajukan');
+      setError('');
+      setText(''); // Reset input setelah sukses
+    } catch (err) {
+      setError(err.message);
+      setSuccess('');
+    }
   };
 
   const StyledAccordion = styled(Accordion)`
@@ -131,11 +152,13 @@ const Pusatbantuan = () => {
             </div>
           </div>
           <div className="col-2 d-flex align-items-center">
-            <Button variant="secondary" className="w-100 h-100" style={{fontSize: '16px', padding:'0'}}>
+            <Button variant="secondary" className="w-100 h-100" style={{fontSize: '16px', padding:'0'}} onClick={handleSubmit}>
               Ajukan
             </Button>
           </div>
         </div>
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        {success && <p style={{ color: 'green' }}>{success}</p>}
         <div className="row pt-4">
           <h2 style={{fontWeight: '700', fontSize: '36px'}}>Pertanyaan Teratas</h2>
         </div>
