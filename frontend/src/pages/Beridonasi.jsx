@@ -152,7 +152,7 @@ const BeriDonasi = () => {
       {/* Komponen Navbar */}
       <Navbarfirst />
 
-      <section className="home">
+      <section className="home z-1">
         <div className="row justify-content-center text-center pb-1">
           <div className="col-10">
             <p style={styles.text}>
