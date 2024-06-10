@@ -215,8 +215,9 @@ function AboutMe() {
 
         .tab-contents ul li p {
           background-color: #ffffff;
-          padding: 10px;
+          padding: 8px;
           border-radius: 25px;
+          font-size: 13px;
         }
 
         .tab-contents ul li span {
