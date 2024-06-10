@@ -51,27 +51,29 @@ const Card = ({ imgSrc, totalDonasi, link = "#" }) => {
     </div>
   );
 };
+const SearchBar = () => {
+  return (
+    <div className="container pt-0">
+      <div className="search" style={styles.search}>
+        <input
+          className="search-input"
+          type="search"
+          placeholder="Search"
+          style={styles.searchInput}
+        />
+        <button className="search-btn" style={styles.searchBtn}>
+          <i className="fas fa-search" style={styles.searchIcon}></i>
+        </button>
+      </div>
+    </div>
+  );
+};
 
 const BeriDonasi = () => {
   return (
-    <section className="home" style={styles.home}>
+    <div style={backgroundStyle}>
       <style>
         {`
-          body {
-            background: linear-gradient(
-              45deg,
-              #00cbb7da,
-              #0098d9de,
-              #00baa7d7,
-              #0081b8dc
-            );
-            animation: color 12s ease-in-out infinite;
-            background-size: 2000% 2000%;
-            background-position: 0%;
-            font-family: "Open Sans", sans-serif;
-            overflow: hidden;
-          }
-
           @keyframes color {
             0% {
               background-position: 0% 50%;
@@ -146,10 +148,11 @@ const BeriDonasi = () => {
           }
         `}
       </style>
+
       {/* Komponen Navbar */}
       <Navbarfirst />
 
-      <div className="background-square" style={styles.backgroundSquare}>
+      <section className="home">
         <div className="row justify-content-center text-center pb-1">
           <div className="col-10">
             <p style={styles.text}>
@@ -172,43 +175,27 @@ const BeriDonasi = () => {
             <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
           </div>
         </div>
-      </div>
-    </section>
-  );
-};
-
-const SearchBar = () => {
-  return (
-    <div className="container pt-0">
-      <div className="search" style={styles.search}>
-        <input
-          className="search-input"
-          type="search"
-          placeholder="Search"
-          style={styles.searchInput}
-        />
-        <button className="search-btn" style={styles.searchBtn}>
-          <i className="fas fa-search" style={styles.searchIcon}></i>
-        </button>
-      </div>
+      </section>
     </div>
   );
 };
 
+// Objek gaya untuk latar belakang
+const backgroundStyle = {
+  height: "100vh", // Memastikan latar belakang menutupi seluruh tinggi viewport
+  background: "linear-gradient(45deg, #00cbb7, #0098d9, #00baa7, #0081b8)",
+  animation: "colorChange 12s ease-in-out infinite",
+  backgroundSize: "200% 200%",
+  backgroundPosition: "0% 50%",
+  fontFamily: '"Open Sans", sans-serif',
+  margin: 0, // Menghapus margin default dari body
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  color: "white",
+};
+
 const styles = {
-  home: {
-    padding: "100px 30px",
-  },
-  backgroundSquare: {
-    position: "fixed",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    width: "88%",
-    height: "88%",
-    zIndex: "-1",
-    overflow: "hidden",
-  },
   text: {
     color: "white",
     fontFamily: "Open Sans",
