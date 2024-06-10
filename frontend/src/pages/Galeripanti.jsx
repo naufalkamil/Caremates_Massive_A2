@@ -4,6 +4,10 @@ import galeri1 from '../img/img-galeri/galeri1.jpg';
 import galeri2 from '../img/img-galeri/galeri2.jpg';
 import galeri3 from '../img/img-galeri/galeri3.jpg';
 import galeri4 from '../img/img-galeri/galeri4.jpg';
+import galeri5 from '../img/img-galeri/galeri5.jpg';
+import galeri6 from '../img/img-galeri/galeri6.jpg';
+import galeri7 from '../img/img-galeri/galeri7.jpg';
+import galeri8 from '../img/img-galeri/galeri8.jpg';
 
 const Galeripanti = () => {
   const [text, setText] = useState('');
@@ -79,37 +83,37 @@ const Galeripanti = () => {
               <img src={galeri4} alt="galeri1" style={imgStyle}/>
             </div>
             <div className="col text-center pb-5">
-              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+              <img src={galeri5} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri6} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri7} alt="galeri1" style={imgStyle}/>
+            </div>
+            <div className="col text-center pb-5">
+              <img src={galeri8} alt="galeri1" style={imgStyle}/>
             </div>
             <div className="col text-center pb-5">
               <img src={galeri1} alt="galeri1" style={imgStyle}/>
             </div>
             <div className="col text-center pb-5">
-              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+              <img src={galeri2} alt="galeri1" style={imgStyle}/>
             </div>
             <div className="col text-center pb-5">
-              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+              <img src={galeri3} alt="galeri1" style={imgStyle}/>
             </div>
             <div className="col text-center pb-5">
-              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+              <img src={galeri4} alt="galeri1" style={imgStyle}/>
             </div>
             <div className="col text-center pb-5">
-              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+              <img src={galeri5} alt="galeri1" style={imgStyle}/>
             </div>
             <div className="col text-center pb-5">
-              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+              <img src={galeri6} alt="galeri1" style={imgStyle}/>
             </div>
             <div className="col text-center pb-5">
-              <img src={galeri1} alt="galeri1" style={imgStyle}/>
-            </div>
-            <div className="col text-center pb-5">
-              <img src={galeri1} alt="galeri1" style={imgStyle}/>
-            </div>
-            <div className="col text-center pb-5">
-              <img src={galeri1} alt="galeri1" style={imgStyle}/>
-            </div>
-            <div className="col text-center pb-5">
-              <img src={galeri1} alt="galeri1" style={imgStyle}/>
+              <img src={galeri7} alt="galeri1" style={imgStyle}/>
             </div>
           </div>
         </div>
