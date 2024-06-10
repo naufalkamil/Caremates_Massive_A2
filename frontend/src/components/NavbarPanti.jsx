@@ -4,6 +4,7 @@ import { Navbar, Nav, Form, Button, InputGroup,} from 'react-bootstrap';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import carematesLogo from '../img/img-components/img-beranda/caremates.png';
+import profile from '../img/img-navbarpanti/profil.png';
 
 function Navbarfirst({  }) {
   const location = useLocation();
@@ -66,7 +67,7 @@ function Navbarfirst({  }) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="ms-auto" style={navStyle}>
-           <NavDropdown title="Roudlotul Jannah" id="basic-nav-dropdown" >
+           <NavDropdown title={<span style={{color:'white'}}> Roudlotul Jannah <img src={profile} alt="Profile" style={{ width: '40px', marginRight: '10px' }} /></span>} id="basic-nav-dropdown" >
               <NavDropdown.Item href="#" style={{ color: '#4D96B6' }}>Profil</NavDropdown.Item>
               <hr style={{color:'#4D96B6'}}/>
               <NavDropdown.Item href="#" style={{ color: '#4D96B6' }}>Notifikasi</NavDropdown.Item>
