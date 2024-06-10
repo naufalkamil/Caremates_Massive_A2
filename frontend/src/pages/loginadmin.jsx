@@ -1,5 +1,7 @@
-import React from "react";
-import styled, { createGlobalStyle, keyframes } from "styled-components";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import authAdmin from '../api/authadmin';
+import styled, { createGlobalStyle, keyframes } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -7,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   body {
     margin: 0;
     padding: 0;
@@ -142,7 +144,27 @@ const Button = styled.button`
   }
 `;
 
-const Login = () => {
+const Loginadmin = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await authAdmin.loginadmin(username, password);
+      setSuccess('Login berhasil');
+      setError('');
+      console.log(response); // Handle the login response as needed
+      navigate('/homeadmin'); // Redirect to /homeadmin upon successful login
+    } catch (err) {
+      setError(err.message);
+      setSuccess('');
+    }
+  };
+
   return (
     <Background>
       <GlobalStyle />
@@ -151,28 +173,34 @@ const Login = () => {
           <img src="/src/assets/caremates01.png" alt="Logo" />
         </LoginLogo>
         <LoginForm>
-          <h2>Selamat Datang!</h2>
-          <form>
+          <h2>Selamat Datang Admin!</h2>
+          <form onSubmit={handleSubmit}>
             <FormGroup>
-              <label htmlFor="email">Masukkan Username </label>
+              <label htmlFor="username">Username</label>
               <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Masukan Email Lembaga"
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Masukan Username Admin"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 required
               />
             </FormGroup>
             <FormGroup>
-              <label htmlFor="password">Masukan Kata Sandi</label>
+              <label htmlFor="password">Masukan Password</label>
               <input
                 type="password"
                 id="password"
                 name="password"
-                placeholder="Masukan Kata Sandi"
+                placeholder="Masukan Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
               />
             </FormGroup>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {success && <p style={{ color: 'green' }}>{success}</p>}
             <Button type="submit">Masuk</Button>
           </form>
         </LoginForm>
@@ -181,4 +209,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Loginadmin;

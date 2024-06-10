@@ -19,5 +19,8 @@ const adminController = require("../controllers/adminController");
   
   // method get dengan parameter id
   router.get("/:id",adminController.getAdminById);
+
+  // Endpoint untuk login
+  router.post("/loginadmin", adminController.loginadmin);
   
 module.exports = router;

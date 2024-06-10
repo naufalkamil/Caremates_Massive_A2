@@ -37,7 +37,7 @@ const getAdminById = (req, res) => {
 
 const createNewAdmin = (req, res) => {
     const{ username, password } = req.body;
-    if(!username || !password){
+    if(!username || !password ){
         return res.status(400).json({
         error: "silahkan isi field username dan password"
         });
@@ -66,13 +66,13 @@ const createNewAdmin = (req, res) => {
 }   
 const updateAdminById = (req, res) => {
     const {id} = req.params;
-    const { username, password } = req.body;
+    const { username, password} = req.body;
     if ( !id || !username || !password ) {
         return  res.status(400).json({
         error: "Silahkan isi field id, username, dan password"
         });
     }
-    database.query(`UPDATE admin SET username = ?, password = ? WHERE id = ?`, [username, password, id], (err, results) => {
+    database.query(`UPDATE admin SET username = ?, password = ?, WHERE id = ?`, [username, password, id], (err, results) => {
         if(err) {
             console.error(err);
             res.status(500).json({
@@ -83,7 +83,7 @@ const updateAdminById = (req, res) => {
 
         if(results.affectedRows === 0){
             return res.status(400).json({
-                error: "Admin dengan ID " + id + " tidak ditemukan, gagal update",
+                error: "admin dengan ID " + id + " tidak ditemukan, gagal update",
             });
         }
         return res.json({
@@ -108,12 +108,48 @@ const deleteAdminById = (req, res) => {
         }
         if(results.affectedRows === 0) {
             return res.status(400).json({
-                error:`Admin dengan ID ${id} tidak ditemukan, gagal dihapus`
+                error:`admin dengan ID ${id} tidak ditemukan, gagal dihapus`
             })
         }
-        res.json({ message: `Admin dengan ID ${id} telah dihapus`});
+        res.json({ message: `admin dengan ID ${id} telah dihapus`});
     })
 };
+
+const loginadmin = (req, res) => {
+    const { username, password } = req.body;
+  
+    // Periksa apakah username dan kata sandi telah diberikan
+    if (!username || !password) {
+      return res.status(400).json({ error: "Silakan masukkan username dan kata sandi" });
+    }
+  
+    // Query ke database untuk mendapatkan pengguna dengan username yang diberikan
+    database.query(
+      "SELECT * FROM admin WHERE username = ?",
+      [username],
+      (err, results) => {
+        if (err) {
+          console.error(err);
+          return res.status(500).json({ error: "Internal Server Error" });
+        }
+  
+        // Periksa apakah pengguna dengan username yang diberikan ditemukan
+        if (results.length === 0) {
+          return res.status(401).json({ error: "username tidak ditemukan" });
+        }
+  
+        const user = results[0];
+  
+        // Verifikasi kata sandi
+        if (user.password !== password) {
+          return res.status(401).json({ error: "Kata sandi salah" });
+        }
+  
+        // Jika username dan kata sandi cocok, kirimkan respons sukses
+        return res.json({ message: "Berhasil login" });
+      }
+    );
+  };
 
 module.exports = {
     getAllAdmin, 
@@ -121,4 +157,5 @@ module.exports = {
     createNewAdmin,
     updateAdminById,
     deleteAdminById, 
+    loginadmin,
 }
