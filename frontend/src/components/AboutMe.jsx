@@ -204,12 +204,11 @@ function AboutMe() {
           max-height: 400px;
           overflow-y: auto;
           padding-right: 10px;
-          margin-bottom
         }
 
         .tab-contents ul li {
           list-style: none;
-          margin: 10px 0;
+          margin: 5px 0; /* Reduced margin */
           width: calc(50% - 10px);
         }
 
@@ -218,6 +217,7 @@ function AboutMe() {
           padding: 8px;
           border-radius: 25px;
           font-size: 13px;
+          margin: 0; /* Removed margin */
         }
 
         .tab-contents ul li span {
@@ -253,7 +253,7 @@ function AboutMe() {
         .gallery-images {
           display: flex;
           flex-wrap: wrap;
-          gap: 40px;
+          gap: 40px; /* Reduced gap */
           justify-content: center;
         }
 
