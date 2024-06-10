@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import authService from '../api/authservice';
-import styled, { createGlobalStyle, keyframes } from 'styled-components';
+import React, { useState } from "react";
+import styled, { createGlobalStyle, keyframes } from "styled-components";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -9,7 +8,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-
+  
   body {
     margin: 0;
     padding: 0;
@@ -72,9 +71,9 @@ const LoginLogo = styled.div`
 const LoginForm = styled.div`
   width: 100%;
   max-width: 1000px;
-  height: 95%;
+  height: 600px;
   background: rgba(203, 200, 200, 0.468);
-  padding: 70px;
+  padding: 90px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -98,6 +97,7 @@ const FormGroup = styled.div`
   color: rgb(255, 255, 255);
   margin-bottom: 20px;
   width: 100%;
+  position: relative;
 
   label {
     width: 100%;
@@ -107,12 +107,15 @@ const FormGroup = styled.div`
   }
 
   input {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     padding: 10px;
+    padding-right: 40px; /* Extra padding for the icon */
     background-color: #fff;
     box-sizing: border-box;
     border-radius: 15px;
     border: none;
+    outline: none;
     color: #000;
     text-align: left;
     margin-bottom: 10px;
@@ -120,6 +123,15 @@ const FormGroup = styled.div`
     @media (max-width: 480px) {
       max-width: 100%;
     }
+  }
+
+  svg {
+    position: absolute;
+    top: 60%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #000;
   }
 `;
 
@@ -145,24 +157,10 @@ const Button = styled.button`
 `;
 
 const Login = () => {
-  const [email, setEmail] = useState('');
-  const [kata_sandi, setKata_sandi] = useState('');
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
-  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await authService.login(email, kata_sandi);
-      setSuccess('Login berhasil');
-      setError('');
-      console.log(response); // Handle the login response as needed
-      navigate('/homepanti'); // Redirect to /homepanti upon successful login
-    } catch (err) {
-      setError(err.message);
-      setSuccess('');
-    }
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
 
   return (
@@ -174,7 +172,7 @@ const Login = () => {
         </LoginLogo>
         <LoginForm>
           <h2>Selamat Datang!</h2>
-          <form onSubmit={handleSubmit}>
+          <form>
             <FormGroup>
               <label htmlFor="email">Alamat Email</label>
               <input
@@ -182,25 +180,24 @@ const Login = () => {
                 id="email"
                 name="email"
                 placeholder="Masukan Email Lembaga"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </FormGroup>
             <FormGroup>
               <label htmlFor="password">Masukan Kata Sandi</label>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
                 placeholder="Masukan Kata Sandi"
-                value={kata_sandi}
-                onChange={(e) => setKata_sandi(e.target.value)}
                 required
               />
+              {showPassword ? (
+                <FaEyeSlash onClick={togglePasswordVisibility} />
+              ) : (
+                <FaEye onClick={togglePasswordVisibility} />
+              )}
             </FormGroup>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            {success && <p style={{ color: 'green' }}>{success}</p>}
             <Button type="submit">Masuk</Button>
           </form>
         </LoginForm>
