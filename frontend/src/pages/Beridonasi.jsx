@@ -3,8 +3,15 @@ import Navbarfirst from "../components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { useEffect } from 'react';
 import galeri1 from "../img/img-galeri/galeri1.jpg";
+import galeri2 from "../img/img-galeri/galeri2.jpg";
+import galeri3 from "../img/img-galeri/galeri3.jpg";
+import galeri4 from "../img/img-galeri/galeri4.jpg";
+import galeri5 from "../img/img-galeri/galeri5.jpg";
+import galeri6 from "../img/img-galeri/galeri6.jpg";
 import { Link } from "react-router-dom";
+
 
 const Card = ({ imgSrc, totalDonasi, link = "#" }) => {
   return (
@@ -170,12 +177,12 @@ const BeriDonasi = () => {
         <SearchBar />
         <div className="container pt-3">
           <div className="row justify-content-center text-start">
-            <Card imgSrc={galeri1} totalDonasi="15.000" link="/detailyayasan" />
+            <Card imgSrc={galeri4} width="70%" totalDonasi="15.000" link="/detailyayasan" />
+            <Card imgSrc={galeri2} width="100%" totalDonasi="15.000" />
+            <Card imgSrc={galeri3} totalDonasi="15.000" />
+            <Card imgSrc={galeri6} totalDonasi="15.000" />
             <Card imgSrc={galeri1} totalDonasi="15.000" />
-            <Card imgSrc={galeri1} totalDonasi="15.000" />
-            <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
-            <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
-            <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
+            <Card imgSrc={galeri5} totalDonasi="15.000" />
           </div>
         </div>
       </section>

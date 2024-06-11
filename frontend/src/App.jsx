@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
-import Beranda from "./pages/Beranda";
+import Beranda from "./pages/beranda";
 import BeriDonasi from "./pages/Beridonasi";
 import Pusatbantuan from "./pages/Pusatbantuan";
 import Tentangkami from "./pages/Tentangkami";
@@ -17,7 +17,7 @@ import Homepanti from "./pages/Homepanti";
 import LogoutPopup from "./pages/Logout";
 import Sudahpenggalangan from "./pages/sudahpenggalangan";
 import Detaildonasi from "./pages/Detaildonasi";
-import Loginadmin from "./pages/Loginadmin";
+import Loginadmin from "./pages/loginadmin";
 import Homeadmin from "./pages/Homeadmin";
 import Transaksi1 from "./pages/Transaksi1";
 import Profile from "./pages/Profile";
