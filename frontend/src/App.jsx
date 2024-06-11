@@ -25,6 +25,7 @@ import Notif from "./pages/Notif";
 import Admin from "./pagesadmin/Dashboardadmin";
 import AdminLembaga from "./pagesadmin/LembagaPage";
 import Pusatbantuanadmin from "./pagesadmin/Pusatbantuanadmin";
+import Konfirmasidonasi from "./pages/Konfirmasidonasi";
 
 
 function App() {
@@ -56,6 +57,8 @@ function App() {
         <Route path="/admindashboard" element={<Admin />} />
         <Route path="/adminlembaga" element={<AdminLembaga />} />
         <Route path="/pusatbantuanadmin" element={<Pusatbantuanadmin />} />
+        <Route path="/konfirmasidonasi" element={<Konfirmasidonasi />} />
+        
 
       </Routes>
     </BrowserRouter>
