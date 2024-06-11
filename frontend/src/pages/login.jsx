@@ -1,6 +1,9 @@
-import React, { useState } from "react";
-import styled, { createGlobalStyle, keyframes } from "styled-components";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import authService from '../api/authservice';
+import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -8,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  
+
   body {
     margin: 0;
     padding: 0;
@@ -157,10 +160,30 @@ const Button = styled.button`
 `;
 
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [kata_sandi, setKata_sandi] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+  const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
+  };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await authService.login(email, kata_sandi);
+      setSuccess('Login berhasil');
+      setError('');
+      console.log(response); // Handle the login response as needed
+      navigate('/homepanti'); // Redirect to /homepanti upon successful login
+    } catch (err) {
+      setError(err.message);
+      setSuccess('');
+    }
   };
 
   return (
@@ -171,33 +194,39 @@ const Login = () => {
           <img src="/src/assets/caremates01.png" alt="Logo" />
         </LoginLogo>
         <LoginForm>
-          <h2>Selamat Datang!</h2>
-          <form>
+          <h2>Selamat Datang !</h2>
+          <form onSubmit={handleSubmit}>
             <FormGroup>
-              <label htmlFor="email">Alamat Email</label>
+              <label htmlFor="email">Email</label>
               <input
                 type="email"
                 id="email"
                 name="email"
-                placeholder="Masukan Email Lembaga"
+                placeholder="Masukan Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 required
               />
             </FormGroup>
             <FormGroup>
-              <label htmlFor="password">Masukan Kata Sandi</label>
+              <label htmlFor="password">Masukan Password</label>
               <input
                 type={showPassword ? "text" : "password"}
-                id="password"
-                name="password"
-                placeholder="Masukan Kata Sandi"
+                id="kata_sandi"
+                name="kata_sandi"
+                placeholder="Masukan Password"
+                value={kata_sandi}
+                onChange={(e) => setKata_sandi(e.target.value)}
                 required
               />
               {showPassword ? (
-                <FaEyeSlash onClick={togglePasswordVisibility} />
-              ) : (
                 <FaEye onClick={togglePasswordVisibility} />
+              ) : (
+                <FaEyeSlash onClick={togglePasswordVisibility} />
               )}
             </FormGroup>
+            {error && <p style={{ color: 'red' }}>{error}</p>}
+            {success && <p style={{ color: 'green' }}>{success}</p>}
             <Button type="submit">Masuk</Button>
           </form>
         </LoginForm>

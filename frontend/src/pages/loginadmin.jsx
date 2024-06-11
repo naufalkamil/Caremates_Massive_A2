@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import authAdmin from '../api/authadmin';
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -72,9 +74,9 @@ const LoginLogo = styled.div`
 const LoginForm = styled.div`
   width: 100%;
   max-width: 1000px;
-  height: 95%;
+  height: 600px;
   background: rgba(203, 200, 200, 0.468);
-  padding: 70px;
+  padding: 90px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -98,6 +100,7 @@ const FormGroup = styled.div`
   color: rgb(255, 255, 255);
   margin-bottom: 20px;
   width: 100%;
+  position: relative;
 
   label {
     width: 100%;
@@ -107,12 +110,15 @@ const FormGroup = styled.div`
   }
 
   input {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     padding: 10px;
+    padding-right: 40px; /* Extra padding for the icon */
     background-color: #fff;
     box-sizing: border-box;
     border-radius: 15px;
     border: none;
+    outline: none;
     color: #000;
     text-align: left;
     margin-bottom: 10px;
@@ -120,6 +126,15 @@ const FormGroup = styled.div`
     @media (max-width: 480px) {
       max-width: 100%;
     }
+  }
+
+  svg {
+    position: absolute;
+    top: 60%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #000;
   }
 `;
 
@@ -150,6 +165,11 @@ const Loginadmin = () => {
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
   const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -173,7 +193,7 @@ const Loginadmin = () => {
           <img src="/src/assets/caremates01.png" alt="Logo" />
         </LoginLogo>
         <LoginForm>
-          <h2>Selamat Datang Admin!</h2>
+          <h2>Selamat Datang !</h2>
           <form onSubmit={handleSubmit}>
             <FormGroup>
               <label htmlFor="username">Username</label>
@@ -190,7 +210,7 @@ const Loginadmin = () => {
             <FormGroup>
               <label htmlFor="password">Masukan Password</label>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 id="password"
                 name="password"
                 placeholder="Masukan Password"
@@ -198,6 +218,11 @@ const Loginadmin = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
+              {showPassword ? (
+                <FaEye onClick={togglePasswordVisibility} />
+              ) : (
+                <FaEyeSlash onClick={togglePasswordVisibility} />
+              )}
             </FormGroup>
             {error && <p style={{ color: 'red' }}>{error}</p>}
             {success && <p style={{ color: 'green' }}>{success}</p>}
