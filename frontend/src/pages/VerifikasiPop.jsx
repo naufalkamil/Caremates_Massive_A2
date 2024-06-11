@@ -1,6 +1,20 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-const VerifikasiPopup = ({ message, handleConfirm, handleCancel }) => {
+const Verifikasi = () => {
+  const [isVerifikasiOpen, setIsVerifikasiOpen] = useState(true);
+
+  const handleConfirm = () => {
+    console.log("Aksi dikonfirmasi");
+    setIsVerifikasiOpen(false);
+    // Logika untuk menangani konfirmasi
+  };
+
+  const handleCancel = () => {
+    console.log("Aksi dibatalkan");
+    setIsVerifikasiOpen(false);
+    // Logika untuk menangani pembatalan
+  };
+
   const backgroundStyle = {
     height: "100vh",
     background: "linear-gradient(45deg, #00cbb7, #0098d9, #00baa7, #0081b8)",
@@ -113,17 +127,21 @@ const VerifikasiPopup = ({ message, handleConfirm, handleCancel }) => {
   `;
 
   return (
-    <div className="verifikasi-popup" style={backgroundStyle}>
+    <>
       <style>{cssStyle}</style>
-      <div className="verifikasi-popup-inner">
-        <h2>{message}</h2>
-        <div className="buttons">
-          <button onClick={handleConfirm}>Ya</button>
-          <button onClick={handleCancel}>Tidak</button>
+      {isVerifikasiOpen && (
+        <div className="verifikasi-popup" style={backgroundStyle}>
+          <div className="verifikasi-popup-inner">
+            <h2>Apakah anda yakin akan menghentikan penggalangan?</h2>
+            <div className="buttons">
+              <button onClick={handleConfirm}>Ya</button>
+              <button onClick={handleCancel}>Tidak</button>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 
-export default VerifikasiPopup;
+export default Verifikasi;

@@ -4,16 +4,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import galeri1 from "../img/img-galeri/galeri1.jpg";
+import { Link } from "react-router-dom";
 
 const Card = ({ imgSrc, totalDonasi, link = "#" }) => {
   return (
     <div className="col-md-4">
       <div className="card p-2" style={styles.card}>
-        <img
-          src={imgSrc}
-          className="card-img-top img-fluid rounded-2"
-          alt="project1"
-        />
+        <Link to={link}>
+          <img
+            src={imgSrc}
+            className="card-img-top img-fluid rounded-2"
+            alt="project1"
+          />
+        </Link>
         <div className="row">
           <div className="col-9">
             <div className="card-body" style={styles.cardBody}>
@@ -22,10 +25,10 @@ const Card = ({ imgSrc, totalDonasi, link = "#" }) => {
                   Total Donasi
                   <br />
                   <b>{totalDonasi}</b>
-                  <a href={link} style={styles.lihatSelengkapnya}>
+                  <Link to={link} style={styles.lihatSelengkapnya}>
                     <br />
                     Lihat Selengkapnya
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>
@@ -167,7 +170,7 @@ const BeriDonasi = () => {
         <SearchBar />
         <div className="container pt-3">
           <div className="row justify-content-center text-start">
-            <Card imgSrc={galeri1} totalDonasi="15.000" />
+            <Card imgSrc={galeri1} totalDonasi="15.000" link="/detailyayasan" />
             <Card imgSrc={galeri1} totalDonasi="15.000" />
             <Card imgSrc={galeri1} totalDonasi="15.000" />
             <Card imgSrc="img/img-panti/panti4.png" totalDonasi="15.000" />
@@ -203,13 +206,13 @@ const styles = {
     fontStyle: "normal",
     lineHeight: "normal",
     marginTop: "80px",
-    marginBottom: "50px",
+    marginBottom: "30px",
   },
   search: {
     display: "flex",
     justifyContent: "center",
-    marginTop: "20px",
-    marginBottom: "30px",
+    marginTop: "10px",
+    marginBottom: "20px",
   },
   searchInput: {
     width: "400px",
@@ -241,8 +244,9 @@ const styles = {
   card: {
     background: "rgba(255, 255, 255, 0.50)",
     border: "none",
-    marginTop: "20px",
+    marginTop: "10px",
     marginBottom: "20px",
+    cursor: "pointer",
   },
   cardBody: {
     padding: 0,

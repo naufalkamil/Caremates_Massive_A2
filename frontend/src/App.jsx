@@ -1,26 +1,27 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './App.css';
-import Beranda from "./pages/beranda";
+import "./App.css";
+import Beranda from "./pages/Beranda";
 import BeriDonasi from "./pages/Beridonasi";
 import Pusatbantuan from "./pages/Pusatbantuan";
 import Tentangkami from "./pages/Tentangkami";
 import Buatakun1 from "./pages/Buatakun1";
 import Buatakun2 from "./pages/Buatakun2";
 import Buatakun3 from "./pages/Buatakun3";
-import Galeripanti from "./pages/Galeripanti";    
+import Galeripanti from "./pages/Galeripanti";
 import Transaksi2 from "./pages/transaksi2";
 import Login from "./pages/login";
 import Pengajuanpenggalangan from "./pages/Pengajuanpenggalangan";
 import Pengajuanpencairan from "./pages/Pengajuanpencairan";
 import Detailyayasan from "./pages/Detailyayasan";
 import Homepanti from "./pages/Homepanti";
-import LogoutPopup from './pages/Logout';
-import Sudahpenggalangan from './pages/sudahpenggalangan';
+import LogoutPopup from "./pages/Logout";
+import Sudahpenggalangan from "./pages/sudahpenggalangan";
 import Detaildonasi from "./pages/Detaildonasi";
-import Loginadmin from "./pages/loginadmin";
+import Loginadmin from "./pages/Loginadmin";
 import Homeadmin from "./pages/Homeadmin";
 import Transaksi1 from "./pages/Transaksi1";
 import Profile from "./pages/Profile";
+import Notif from "./pages/Notif";
 
 function App() {
   return (
@@ -36,7 +37,10 @@ function App() {
         <Route path="/galeripanti" element={<Galeripanti />} />
         <Route path="/transaksi2" element={<Transaksi2 />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/pengajuanpenggalangan" element={<Pengajuanpenggalangan />} />
+        <Route
+          path="/pengajuanpenggalangan"
+          element={<Pengajuanpenggalangan />}
+        />
         <Route path="/pengajuanpencairan" element={<Pengajuanpencairan />} />
         <Route path="/detailyayasan" element={<Detailyayasan />} />
         <Route path="/homepanti" element={<Homepanti />} />
@@ -47,6 +51,7 @@ function App() {
         <Route path="/homeadmin" element={<Homeadmin />} />
         <Route path="/transaksi1" element={<Transaksi1 />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/notif" element={<Notif />} />
       </Routes>
     </BrowserRouter>
   );
