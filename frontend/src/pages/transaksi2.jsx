@@ -3,9 +3,16 @@ import Navbarfirst from '../components/Navbar';
 import Button from 'react-bootstrap/Button';
 import barcode from '../img/img-transaksi2/qris-rek.jpg'
 import qris from '../img/img-transaksi2/QRIS.png'
+import { useNavigate } from 'react-router-dom';
+
 
 
 const transaksi2 = () => {
+  const navigate = useNavigate();
+
+    const handleButtonClick = () => {
+        navigate('/Konfirmasidonasi');
+      };
   
 
   React.useEffect(() => {
@@ -61,15 +68,15 @@ const transaksi2 = () => {
                 </div>
 
             </div>
-            <div className="col-6" style={{justifyContent:'center',paddingLeft:'16%',paddingTop: '14%' }} >
-              <p>ID Pembayaran: 12541-422154-12</p>
+            <div className="col-6" style={{justifyContent:'center',paddingLeft:'16%',paddingTop: '11%' }} >
+              <p style={{fontSize:'20px'}}>Tambahkan id berikut pada nominal terakhir donasi</p>
               <label className="label">
-                  <span className="label-text">Rp. 10.000</span>
+                  <span className="label-text">1</span>
               </label>
-              <p style={{marginTop:'10px'}}>Waktu Pembayaran Tersisa : 8.00.15</p>
+              <p style={{marginTop:'10px', fontSize:'17px'}}>Contoh: Rp 10.001</p>
               <div style={{paddingTop:'10px' ,paddingLeft:'10px'}}>
               <Button variant="warning" style={{ width: '100%', height: '100%', marginBottom: '5%'}}>Download QRIS</Button>{' '}
-              <Button variant="primary" style={{ width: '100%', height: '100%'}}>Konfirmasi Donasi</Button>{' '}
+              <Button variant="primary" style={{ width: '100%', height: '100%'}} onClick={handleButtonClick}>Konfirmasi Donasi</Button>{' '}
               </div>
             </div>
         </div>
