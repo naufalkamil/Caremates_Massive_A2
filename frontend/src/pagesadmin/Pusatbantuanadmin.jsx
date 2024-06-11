@@ -2,9 +2,9 @@ import { useState } from 'react'
 import './App.css'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
-import Lembaga from './components/Lembaga'
+import Pusatbantuan from './components/Pusatbantuan'
 
-function Lembagapage() {
+function Pusatbantuanadmin() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
 
   const OpenSidebar = () => {
@@ -15,9 +15,9 @@ function Lembagapage() {
     <div className='grid-container'>
       <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <Lembaga />
+      <Pusatbantuan />
     </div>
   )
 }
 
-export default Lembagapage
+export default Pusatbantuanadmin

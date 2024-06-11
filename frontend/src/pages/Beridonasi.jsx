@@ -175,7 +175,7 @@ const BeriDonasi = () => {
           </div>
         </div>
         <SearchBar />
-        <div className="container pt-3">
+        <div className="container pt-3 ">
           <div className="row justify-content-center text-start">
             <Card imgSrc={galeri4} width="70%" totalDonasi="15.000" link="/detailyayasan" />
             <Card imgSrc={galeri2} width="100%" totalDonasi="15.000" />
@@ -203,6 +203,7 @@ const backgroundStyle = {
   flexDirection: "column",
   alignItems: "center",
   color: "white",
+  overflow: "hidden",
 };
 
 const styles = {
@@ -212,8 +213,9 @@ const styles = {
     fontSize: "18px",
     fontStyle: "normal",
     lineHeight: "normal",
-    marginTop: "80px",
+    marginTop: "50px",
     marginBottom: "30px",
+    overflow: "hidden",
   },
   search: {
     display: "flex",

@@ -22,8 +22,9 @@ import Homeadmin from "./pages/Homeadmin";
 import Transaksi1 from "./pages/Transaksi1";
 import Profile from "./pages/Profile";
 import Notif from "./pages/Notif";
-import Admin from "./pagesadmin/Dashboardadmin"
-import AdminLembaga from "./pagesadmin/LembagaPage"
+import Admin from "./pagesadmin/Dashboardadmin";
+import AdminLembaga from "./pagesadmin/LembagaPage";
+import Pusatbantuanadmin from "./pagesadmin/Pusatbantuanadmin";
 
 
 function App() {
@@ -57,6 +58,7 @@ function App() {
         <Route path="/notif" element={<Notif />} />
         <Route path="/admindashboard" element={<Admin />} />
         <Route path="/adminlembaga" element={<AdminLembaga />} />
+        <Route path="/pusatbantuanadmin" element={<Pusatbantuanadmin />} />
 
       </Routes>
     </BrowserRouter>

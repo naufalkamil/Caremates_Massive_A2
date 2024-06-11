@@ -19,32 +19,29 @@ function Lembaga() {
 
   return (
     <main className='main-container'>
-      <p style={{fontSize:"30px", width:"100", textAlign:"center"}}>DATA LEMBAGA</p>
-      <Button className="mb-4" variant="info">Tambah Lembaga +</Button>{' '}
+        <p style={{fontSize:"30px", width:"100", textAlign:"center"}}>DATA PUSAT BANTUAN</p>
+      <Button className="mb-4" variant="info">Tambah +</Button>{' '}
       <Table striped bordered hover variant='dark' style={tableStyle}>
         <thead style={headerStyle}>
           <tr style={{justifyContent:'center', textAlign:'center'}}>
             <th>ID</th>
-            <th>Nama Lembaga</th>
-            <th>Alamat</th>
-            <th>Telepon</th>
+            <th>Pertanyaan</th>
+            <th>Jawaban</th>
             <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
           <tr>
             <td>1</td>
-            <td>Amanah Panti</td>
-            <td>jl. Amanah</td>
-            <td>0812345678</td>
+            <td>Apa Itu Caremates ?</td>
+            <td>Caremates adalah sebuah platform donasi online dengan lembaga terpercaya</td>
             <td className="text-center"><Button className="me-1"  variant="primary">Edit</Button><Button className="me-1" variant="danger">Hapus</Button></td>
             
           </tr>
           <tr style={rowStyle}>
             <td>2</td>
-            <td>Melati Yayasan</td>
-            <td>jl. melati </td>
-            <td>0812345677</td>
+            <td>Bagaimana Cara Mendaftarkan Akun</td>
+            <td>Daftarkan akun di caremates sangat mudah melalui tombol daftarkan akun pada beranda</td>
             <td className="text-center"><Button className="me-1"  variant="primary">Edit</Button><Button className="me-1" variant="danger">Hapus</Button></td>
           </tr>
         </tbody>
