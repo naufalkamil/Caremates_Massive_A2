@@ -11,6 +11,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { MdEdit } from "react-icons/md";
 import AboutMe from "../components/AboutMe";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -146,19 +147,31 @@ const Profile = () => {
           </div>
           <ul style={styles.sidebarMenu}>
             <li style={styles.menuitem}>
-              <button className="btn btn-primary" style={styles.button}>
+              <Link
+                to="/detaildonasi"
+                className="btn btn-primary"
+                style={styles.button}
+              >
                 Donasi Berlangsung
-              </button>
+              </Link>
             </li>
             <li style={styles.menuitem}>
-              <button className="btn btn-primary" style={styles.button}>
+              <Link
+                to="/pengajuanpencairan"
+                className="btn btn-primary"
+                style={styles.button}
+              >
                 Pencairan Dana
-              </button>
+              </Link>
             </li>
             <li style={styles.menuitem}>
-              <button className="btn btn-primary" style={styles.button}>
+              <Link
+                to="/logout"
+                className="btn btn-primary"
+                style={styles.button}
+              >
                 Logout
-              </button>
+              </Link>
             </li>
           </ul>
         </div>
@@ -202,7 +215,7 @@ const styles = {
   sidebar: {
     flex: "0 1 250px",
     marginTop: "7%",
-    height: "70%",
+    height: "80%",
     backgroundColor: "#ffffff6b",
     padding: "10px",
     borderRadius: "10px",
@@ -258,7 +271,7 @@ const styles = {
   content: {
     flex: 1,
     marginTop: "7%",
-    height: "70%",
+    height: "80%",
     backgroundColor: "#ffffff6b",
     padding: "10px",
     borderRadius: "10px",

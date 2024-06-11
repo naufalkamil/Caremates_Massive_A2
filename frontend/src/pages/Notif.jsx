@@ -54,6 +54,7 @@ const notificationListStyle = {
 const notificationItemStyle = {
   marginBottom: "10px", // Tambahkan margin bottom untuk jarak antar item
   borderBottom: "1px solid rgba(255, 255, 255, 0.77)",
+  color: "white",
 };
 
 const smallTextStyle = {
