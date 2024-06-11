@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbarfirst from '../components/Navbar';
 import Button from 'react-bootstrap/Button';
-import barcode from '../img/img-transaksi2/barcode.png'
+import barcode from '../img/img-transaksi2/qris-rek.jpg'
 import qris from '../img/img-transaksi2/QRIS.png'
 
 
@@ -68,7 +68,8 @@ const transaksi2 = () => {
               </label>
               <p style={{marginTop:'10px'}}>Waktu Pembayaran Tersisa : 8.00.15</p>
               <div style={{paddingTop:'10px' ,paddingLeft:'10px'}}>
-              <Button variant="warning" style={{ width: '100%', height: '100%'}}>Download QRIS</Button>{' '}
+              <Button variant="warning" style={{ width: '100%', height: '100%', marginBottom: '5%'}}>Download QRIS</Button>{' '}
+              <Button variant="primary" style={{ width: '100%', height: '100%'}}>Konfirmasi Donasi</Button>{' '}
               </div>
             </div>
         </div>

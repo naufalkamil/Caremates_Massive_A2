@@ -17,6 +17,8 @@ function Navbarfirst({ activeLinkProp }) {
       '/pusatbantuan': 'help',
       '/detailyayasan': 'features',
       '/galeripanti': 'features',
+      '/transaksi2': 'features',
+      
     };
     const currentPath = location.pathname;
     setActiveLink(pathToKey[currentPath] || 'home');
@@ -80,8 +82,8 @@ const navbarStyle = {
   borderRadius: '20px',
   background: 'rgba(255, 255, 255, 0.42)',
   boxShadow: '0px 0px 24px -5px rgba(0, 0, 0, 0.25)',
-  WebkitBackdropFilter: 'blur(20px)', // Backdrop filter for Chrome, Safari, and Opera
-  backdropFilter: 'blur(20px)', // Backdrop filter for Firefox
+  WebkitBackdropFilter: 'blur(20px)', 
+  backdropFilter: 'blur(20px)', 
   border: '1px solid rgba(255, 255, 255, 0.77)',
 };
 

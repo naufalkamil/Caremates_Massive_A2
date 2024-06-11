@@ -104,7 +104,7 @@ const BeriDonasi = () => {
 
           .container .row {
             overflow-y: auto;
-            max-height: 400px;
+            max-height: 440%;
             -ms-overflow-style: none; /* IE and Edge */
             scrollbar-width: none; /* Firefox */
           }
@@ -175,14 +175,14 @@ const BeriDonasi = () => {
           </div>
         </div>
         <SearchBar />
-        <div className="container pt-3 ">
+        <div className="container pt-3 " style={{width: "85%", height: "10%"}}>
           <div className="row justify-content-center text-start">
             <Card imgSrc={galeri4} width="70%" totalDonasi="15.000" link="/detailyayasan" />
-            <Card imgSrc={galeri2} width="100%" totalDonasi="15.000" />
-            <Card imgSrc={galeri3} totalDonasi="15.000" />
-            <Card imgSrc={galeri6} totalDonasi="15.000" />
-            <Card imgSrc={galeri1} totalDonasi="15.000" />
-            <Card imgSrc={galeri5} totalDonasi="15.000" />
+            <Card imgSrc={galeri2} width="100%" totalDonasi="59.000" />
+            <Card imgSrc={galeri3} totalDonasi="90.000" />
+            <Card imgSrc={galeri6} totalDonasi="34.000" />
+            <Card imgSrc={galeri1} totalDonasi="5.000" />
+            <Card imgSrc={galeri5} totalDonasi="150.000" />
           </div>
         </div>
       </section>
@@ -210,18 +210,18 @@ const styles = {
   text: {
     color: "white",
     fontFamily: "Open Sans",
-    fontSize: "18px",
+    fontSize: "14px",
     fontStyle: "normal",
     lineHeight: "normal",
-    marginTop: "50px",
-    marginBottom: "30px",
+    marginTop: "45px",
+    marginBottom: "1%",
     overflow: "hidden",
   },
   search: {
     display: "flex",
     justifyContent: "center",
-    marginTop: "10px",
-    marginBottom: "20px",
+    marginTop: "1px",
+    marginBottom: "1px",
   },
   searchInput: {
     width: "400px",
@@ -233,7 +233,7 @@ const styles = {
     borderRadius: "25px 0 0 25px",
     outline: "none",
     color: "#000000",
-    boxShadow: "0 2px 0 rgba(0, 0, 0, 0.1)",
+    boxShadow: "0 4px 0 rgba(0, 0, 0, 0.1)",
   },
   searchBtn: {
     width: "55px",
@@ -245,7 +245,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "center",
     background: "rgba(0, 0, 0, 0.041)",
-    boxShadow: "0 2px 0 rgba(0, 0, 0, 0.1)",
+    boxShadow: "0 4px 0 rgba(0, 0, 0, 0.1)",
   },
   searchIcon: {
     color: "white",

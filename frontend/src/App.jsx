@@ -41,10 +41,7 @@ function App() {
         <Route path="/galeripanti" element={<Galeripanti />} />
         <Route path="/transaksi2" element={<Transaksi2 />} />
         <Route path="/login" element={<Login />} />
-        <Route
-          path="/pengajuanpenggalangan"
-          element={<Pengajuanpenggalangan />}
-        />
+        <Route path="/pengajuanpenggalangan" element={<Pengajuanpenggalangan />} />
         <Route path="/pengajuanpencairan" element={<Pengajuanpencairan />} />
         <Route path="/detailyayasan" element={<Detailyayasan />} />
         <Route path="/homepanti" element={<Homepanti />} />

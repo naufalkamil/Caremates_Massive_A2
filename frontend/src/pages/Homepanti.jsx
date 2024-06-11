@@ -6,10 +6,8 @@ import Navbarfirst from '../components/NavbarPanti';
 import caremates from '../img/img-navbarpanti/caremates2.png';
 
 const Homepanti = () => {
-  // Fungsi untuk menampilkan slide secara otomatis
   
 
-  // Jalankan fungsi showSlides setelah konten dimuat
   React.useEffect(() => {
 
   }, []);
@@ -124,8 +122,8 @@ const Homepanti = () => {
         <Container>
           <Row>
             <Col xs={12} md={8} style={{ paddingTop: '20%' }}>
-              <div className="icon" style={{ justifyContent: 'center', paddingRight: '3%', color: 'white', fontFamily: 'Open Sans', textAlign: 'justify', fontSize: '', fontStyle: 'normal', fontWeight: '0px', lineHeight: 'normal', marginBottom: '0' }}>
-                <h2 style={{ paddingLeft: '7%', fontSize:'180%' }}>Selamat Datang! <br />Selamat Bergabung dengan Caremates.<br />
+              <div className="icon" style={{ justifyContent: 'center', paddingRight: '3%', color: 'white', fontFamily: 'Open Sans', textAlign: 'left', fontSize: '', fontStyle: 'normal', fontWeight: '0px', lineHeight: 'normal', marginBottom: '0' }}>
+                <h2 style={{ paddingLeft: '7%', fontSize:'125%' }}>Selamat Datang! <br />Selamat Bergabung dengan Caremates.<br />
                   Sebelum melakukan penggalangan dana, pastikan<br /> semua data pada profil telah dilengkapi.</h2>
               </div>
             </Col>
@@ -139,7 +137,7 @@ const Homepanti = () => {
           <Row>
             <Col xs={12} style={{ paddingTop: '0%' }}>
               <div className="icon col-md-12 justify-content-center">
-                <div className="button-ajukan">Ajukan Penggalangan Dana</div>
+                <div className="button-ajukan" style={{padding:'2%'}}>Ajukan Penggalangan Dana</div>
               </div>
             </Col>
           </Row>
@@ -150,15 +148,14 @@ const Homepanti = () => {
   );
 };
 
-// Objek gaya untuk latar belakang
 const backgroundStyle = {
-  height: '100vh', // Memastikan latar belakang menutupi seluruh tinggi viewport
+  height: '100vh',
   background: 'linear-gradient(45deg, #00cbb7, #0098d9, #00baa7, #0081b8)',
   animation: 'colorChange 12s ease-in-out infinite',
   backgroundSize: '200% 200%',
   backgroundPosition: '0% 50%',
   fontFamily: '"Open Sans", sans-serif',
-  margin: 0, // Menghapus margin default dari body
+  margin: 0,
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

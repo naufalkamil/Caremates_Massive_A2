@@ -10,10 +10,13 @@ import {
 } from "@mui/material";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import AvatarImage from "../assets/caremates.png";
+import Navbarfirst from '../components/NavbarPanti';
+import zIndex from "@mui/material/styles/zIndex";
 
-const sharedBackground = "#ffffff6b"; // Warna background yang sama
 
-const navbarStyle = {
+const sharedBackground = "#ffffff6b"; 
+
+/* const navbarStyle = {
   marginBottom: "20px",
   padding: "10px",
   margin: "3%",
@@ -26,9 +29,9 @@ const navbarStyle = {
   WebkitBackdropFilter: "blur(20px)",
   backdropFilter: "blur(20px)",
   border: "1px solid rgba(255, 255, 255, 0.77)",
-};
+}; */
 
-const backgroundSquare = {
+/* const backgroundSquare = {
   position: "fixed",
   top: "50%",
   left: "50%",
@@ -37,22 +40,26 @@ const backgroundSquare = {
   height: "88%",
   borderRadius: "20px",
   backgroundColor: sharedBackground,
-  zIndex: 1,
+  zIndex: -1,
   overflow: "hidden",
   boxShadow: "0px 0px 24px -5px rgba(0, 0, 0, 0.25)",
   WebkitBackdropFilter: "blur(20px)",
   backdropFilter: "blur(20px)",
   border: "1px solid rgba(255, 255, 255, 0.77)",
   marginTop: "1%",
-};
+}; */
 
 const notificationListStyle = {
-  padding: "90px 20px 20px", // Tambahkan padding top untuk jarak dari atas
+  padding: "90px 20px 20px",
+  marginRight: "6%",
+  marginLeft: "6%",
+  marginTop: "1%",
   listStyleType: "none",
+  zIndex: 1,
 };
 
 const notificationItemStyle = {
-  marginBottom: "10px", // Tambahkan margin bottom untuk jarak antar item
+  marginBottom: "10px", 
   borderBottom: "1px solid rgba(255, 255, 255, 0.77)",
   color: "white",
 };
@@ -62,10 +69,10 @@ const smallTextStyle = {
 };
 
 const boldTextStyle = {
-  fontWeight: "bold", // Membuat teks menjadi tebal (bold)
+  fontWeight: "bold", 
 };
 const imageStyle = {
-  marginRight: "10px", // Jarak antara gambar dan teks
+  marginRight: "10px",
 };
 
 const Notif = () => {
@@ -120,7 +127,9 @@ const Notif = () => {
           }
         `}
       </style>
-      <AppBar position="fixed" style={navbarStyle}>
+      <Navbarfirst />
+
+      {/* <AppBar position="fixed" style={navbarStyle}>
         <Toolbar>
           <Typography variant="h6" style={{ flexGrow: 1 }}>
             Notifikasi
@@ -156,8 +165,8 @@ const Notif = () => {
             </Menu>
           </div>
         </Toolbar>
-      </AppBar>
-      <div style={backgroundSquare}>
+      </AppBar> */}
+      <div className="notif" style={{paddingTop:"3%"}}>
         <ul style={notificationListStyle}>
           <li style={notificationItemStyle}>
             <img src={AvatarImage} alt="Avatar" style={imageStyle} />

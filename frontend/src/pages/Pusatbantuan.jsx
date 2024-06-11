@@ -23,10 +23,10 @@ const Pusatbantuan = () => {
     }
 
     try {
-      await pusatbantuanService.createPusatbantuan(text, ''); // Jawaban bisa kosong atau diisi sesuai kebutuhan
+      await pusatbantuanService.createPusatbantuan(text, '');
       setSuccess('Pertanyaan berhasil diajukan');
       setError('');
-      setText(''); // Reset input setelah sukses
+      setText('');
     } catch (err) {
       setError(err.message);
       setSuccess('');
@@ -35,7 +35,7 @@ const Pusatbantuan = () => {
 
   const StyledAccordion = styled(Accordion)`
     overflow-y: auto;
-    max-height: 40vh;
+    max-height: 45vh;
     border-radius: 25px;
 
     /* Hide scrollbar for Chrome, Safari, and Opera */
@@ -205,7 +205,6 @@ const Pusatbantuan = () => {
   );
 };
 
-// Objek gaya untuk latar belakang
 const backgroundStyle = {
   height: '100vh',
   background: 'linear-gradient(45deg, #00cbb7, #0098d9, #00baa7, #0081b8)',

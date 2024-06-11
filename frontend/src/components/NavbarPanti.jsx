@@ -68,9 +68,9 @@ function Navbarfirst({  }) {
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
           <Nav className="ms-auto" style={navStyle}>
            <NavDropdown title={<span style={{color:'white'}}> Roudlotul Jannah <img src={profile} alt="Profile" style={{ width: '40px', marginRight: '10px' }} /></span>} id="basic-nav-dropdown" >
-              <NavDropdown.Item href="#" style={{ color: '#4D96B6' }}>Profil</NavDropdown.Item>
+              <NavDropdown.Item href="/profile" style={{ color: '#4D96B6' }}>Profil</NavDropdown.Item>
               <hr style={{color:'#4D96B6'}}/>
-              <NavDropdown.Item href="#" style={{ color: '#4D96B6' }}>Notifikasi</NavDropdown.Item>
+              <NavDropdown.Item href="/notif" style={{ color: '#4D96B6' }}>Notifikasi</NavDropdown.Item>
               <NavDropdown.Divider />
             </NavDropdown>
           </Nav>
