@@ -45,7 +45,7 @@ const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
   padding: 30px;
   flex-wrap: wrap;
 
@@ -74,9 +74,9 @@ const LoginLogo = styled.div`
 const LoginForm = styled.div`
   width: 100%;
   max-width: 1000px;
-  height: 600px;
+  height: 130%;
   background: rgba(203, 200, 200, 0.468);
-  padding: 90px;
+  padding: 70px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -177,8 +177,8 @@ const Loginadmin = () => {
       const response = await authAdmin.loginadmin(username, password);
       setSuccess('Login berhasil');
       setError('');
-      console.log(response); // Handle the login response as needed
-      navigate('/homeadmin'); // Redirect to /homeadmin upon successful login
+      console.log(response);
+      navigate('/admindashboard');
     } catch (err) {
       setError(err.message);
       setSuccess('');
