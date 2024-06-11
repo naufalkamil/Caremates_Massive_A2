@@ -21,6 +21,8 @@ import Loginadmin from "./pages/loginadmin";
 import Homeadmin from "./pages/Homeadmin";
 import Transaksi1 from "./pages/Transaksi1";
 import Profile from "./pages/Profile";
+import Admin from "./pagesadmin/Dashboardadmin"
+import AdminLembaga from "./pagesadmin/LembagaPage"
 
 function App() {
   return (
@@ -47,6 +49,8 @@ function App() {
         <Route path="/homeadmin" element={<Homeadmin />} />
         <Route path="/transaksi1" element={<Transaksi1 />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/admindashboard" element={<Admin />} />
+        <Route path="/adminlembaga" element={<AdminLembaga />} />
       </Routes>
     </BrowserRouter>
   );
